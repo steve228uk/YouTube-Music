@@ -1,0 +1,15 @@
+* {
+    -webkit-user-select: none;
+}
+
+input, textarea {
+   -webkit-user-select: text;
+}
+
+body {
+    background: #131313 !important;
+}
+
+ytmusic-nav-bar {
+    padding-left: 100px;
+}

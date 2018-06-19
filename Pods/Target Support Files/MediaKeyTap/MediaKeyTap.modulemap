@@ -1,0 +1,6 @@
+framework module MediaKeyTap {
+  umbrella header "MediaKeyTap-umbrella.h"
+
+  export *
+  module * { export * }
+}

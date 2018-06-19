@@ -1,0 +1,16 @@
+PODS:
+  - MediaKeyTap (2.1.0)
+
+DEPENDENCIES:
+  - MediaKeyTap
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - MediaKeyTap
+
+SPEC CHECKSUMS:
+  MediaKeyTap: 1849cb1882ebd1ece5fed6b3cec6565a5f30da00
+
+PODFILE CHECKSUM: 64af90bff90f8ed15fb12064d2805416b3ba670c
+
+COCOAPODS: 1.5.0
