@@ -11,5 +11,9 @@ body {
 }
 
 ytmusic-nav-bar {
-    padding-left: 100px;
+/*    padding-left: 100px;*/
+}
+
+.logo.ytmusic-nav-bar {
+    display: none;
 }

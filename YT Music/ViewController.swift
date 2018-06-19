@@ -14,6 +14,10 @@ class ViewController: NSViewController {
 
     var webView: CustomWebView!
     var mediaKeyTap: MediaKeyTap?
+    var backButton: NSButton!
+    var forwardButton: NSButton!
+    var backObservation: NSKeyValueObservation?
+    var forwardObservation: NSKeyValueObservation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,17 +30,29 @@ class ViewController: NSViewController {
         let url = URL(string: "https://music.youtube.com")!
         let request = URLRequest(url: url)
         webView.load(request)
+        
+        backObservation = webView.observe(\CustomWebView.canGoBack) { (webView, _) in
+            self.backButton.isEnabled = webView.canGoBack
+            self.backButton.image = webView.canGoBack ? #imageLiteral(resourceName: "Back Arrow Active") : #imageLiteral(resourceName: "Back Arrow Inactive")
+        }
+        
+        forwardObservation = webView.observe(\CustomWebView.canGoForward) { (webView, _) in
+            self.forwardButton.isEnabled = webView.canGoForward
+            self.forwardButton.image = webView.canGoForward ? #imageLiteral(resourceName: "Forward Arrow Active") : #imageLiteral(resourceName: "Forward Arrow Inactive")
+        }
     }
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
-//        webConfiguration.websiteDataStore = WKWebsiteDataStore.nonPersistent()
         webView = CustomWebView(frame: .zero, configuration: webConfiguration)
         webView.frame = NSRect(x: 0, y: 0, width: 1024, height: 768)
         webView.allowsBackForwardNavigationGestures = true
         webView.uiDelegate = self
         webView.navigationDelegate = self
         webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15"
+        
+        addNavigationButtons()
+        
         view = webView
     }
     
@@ -82,16 +98,44 @@ class ViewController: NSViewController {
             }
         }
     }
+    
+    func addNavigationButtons() {
+        backButton = NSButton(image: #imageLiteral(resourceName: "Back Arrow Inactive"), target: self, action: #selector(backButtonClicked(_:)))
+        backButton.isEnabled = false
+        backButton.bezelStyle = .shadowlessSquare
+        backButton.isBordered = false
+        
+        var frame = backButton.frame
+        frame.origin = CGPoint(x: 90, y: 15)
+        backButton.frame = frame
+        
+        webView.addSubview(backButton)
+        
+        forwardButton = NSButton(image: #imageLiteral(resourceName: "Forward Arrow Inactive"), target: self, action: #selector(forwardButtonClicked(_:)))
+        forwardButton.isEnabled = false
+        forwardButton.bezelStyle = .shadowlessSquare
+        forwardButton.isBordered = false
+        
+        frame = forwardButton.frame
+        frame.origin = CGPoint(x: 130, y: 15)
+        forwardButton.frame = frame
+        
+        webView.addSubview(forwardButton)
+    }
+    
+    @objc func backButtonClicked(_ sender: NSButton) {
+        webView.goBack()
+    }
+    
+    @objc func forwardButtonClicked(_ sender: NSButton) {
+        webView.goForward()
+    }
 
 }
 
 // MARK: - Delegates
 
 extension ViewController: WKNavigationDelegate, WKUIDelegate {
-    
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        print("started", navigation)
-    }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print(error)
@@ -107,7 +151,7 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
         injectCustomCSS()
         view.animator().alphaValue = 1
     }
-    
+
 }
 
 // MARK: - Media Keys
