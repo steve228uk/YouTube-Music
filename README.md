@@ -4,7 +4,11 @@ A simple Mac app wrapper using WKWebView for [YouTube Music](https://music.youtu
 
 The latest binary can be found on the releases page or clone and compile in Xcode.
 
+## Features
+
+- Simple app to run YouTube Music as a standalone process
+- Media key support!
+
 ## Known Issues
 
 - Hover for the traffic light window buttons is in the incorrect position.
-- Media keys not currently implemented due to WKWebView not loading outside of Sandbox.
