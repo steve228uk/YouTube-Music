@@ -113,7 +113,42 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
 extension ViewController: MediaKeyTapDelegate {
     
     func handle(mediaKey: MediaKey, event: KeyEvent) {
-        print(mediaKey)
+        guard webView.url?.host == "music.youtube.com" else {
+            return
+        }
+        
+        switch mediaKey {
+        case .playPause:
+            playPause()
+            break
+        case .next, .fastForward:
+            nextTrack()
+            break
+        case.previous, .rewind:
+            previousTrack()
+            break
+        }
+    }
+    
+    func playPause() {
+        clickElement(className: "play-pause-button")
+    }
+    
+    func nextTrack() {
+        clickElement(className: "next-button")
+    }
+    
+    func previousTrack() {
+        clickElement(className: "previous-button")
+    }
+    
+    func clickElement(className: String) {
+        let js = "var elements = document.getElementsByClassName('\(className)'); if(elements.length > 0) { elements[0].click(); }";
+        webView.evaluateJavaScript(js) { (_, error) in
+            if let error = error {
+                print(error)
+            }
+        }
     }
     
 }
