@@ -32,6 +32,7 @@ class ViewController: NSViewController {
         let webConfiguration = WKWebViewConfiguration()
 //        webConfiguration.websiteDataStore = WKWebsiteDataStore.nonPersistent()
         webView = CustomWebView(frame: .zero, configuration: webConfiguration)
+        webView.frame = NSRect(x: 0, y: 0, width: 1024, height: 768)
         webView.allowsBackForwardNavigationGestures = true
         webView.uiDelegate = self
         webView.navigationDelegate = self
@@ -41,6 +42,8 @@ class ViewController: NSViewController {
     
     override func viewDidLayout() {
         
+        super.viewDidLayout()
+
         if let btn = view.window?.standardWindowButton(.closeButton) {
             btn.removeFromSuperview()
             btn.setFrameOrigin(NSPoint(x: 17, y: 22))
@@ -58,8 +61,7 @@ class ViewController: NSViewController {
             btn.setFrameOrigin(NSPoint(x: 57, y: 22))
             view.addSubview(btn)
         }
-        
-        super.viewDidLayout()
+
         
     }
     
