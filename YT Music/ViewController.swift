@@ -22,7 +22,7 @@ class ViewController: NSViewController {
         mediaKeyTap?.start()
         
         view.alphaValue = 0
-
+        
         let url = URL(string: "https://music.youtube.com")!
         let request = URLRequest(url: url)
         webView.load(request)
@@ -30,6 +30,7 @@ class ViewController: NSViewController {
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
+//        webConfiguration.websiteDataStore = WKWebsiteDataStore.nonPersistent()
         webView = CustomWebView(frame: .zero, configuration: webConfiguration)
         webView.allowsBackForwardNavigationGestures = true
         webView.uiDelegate = self
@@ -96,8 +97,10 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
-        print("finished", navigation)
+        guard webView.url?.host == "music.youtube.com" else {
+            view.animator().alphaValue = 1
+            return
+        }
         
         injectCustomCSS()
         view.animator().alphaValue = 1
