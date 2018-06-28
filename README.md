@@ -2,7 +2,10 @@
 
 A simple Mac app wrapper using WKWebView for [YouTube Music](https://music.youtube.com).
 
+### Installation
+
 The latest binary can be found on the releases page or clone and compile in Xcode.
+If [homebrew](https://brew.sh) is installed, you can also use `brew tap caskroom/cask && brew cask install yt-music`
 
 ## Features
 
