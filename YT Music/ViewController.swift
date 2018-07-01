@@ -13,6 +13,7 @@ import MediaKeyTap
 class ViewController: NSViewController {
 
     var webView: CustomWebView!
+    var movableView: WindowMovableView!
     var mediaKeyTap: MediaKeyTap?
     var backButton: NSButton!
     var forwardButton: NSButton!
@@ -45,12 +46,15 @@ class ViewController: NSViewController {
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
         webView = CustomWebView(frame: .zero, configuration: webConfiguration)
+        webView.wantsLayer = true
+        webView.layerContentsRedrawPolicy = .onSetNeedsDisplay
         webView.frame = NSRect(x: 0, y: 0, width: 1024, height: 768)
         webView.allowsBackForwardNavigationGestures = true
         webView.uiDelegate = self
         webView.navigationDelegate = self
         webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15"
         
+        addMovableView()
         addNavigationButtons()
         
         view = webView
@@ -78,6 +82,7 @@ class ViewController: NSViewController {
             view.addSubview(btn)
         }
 
+        movableView.frame = CGRect(x: 0, y: 0, width: webView.frame.width, height: 20)
         
     }
     
@@ -131,6 +136,12 @@ class ViewController: NSViewController {
         webView.goForward()
     }
 
+    func addMovableView() {
+        movableView = WindowMovableView(frame: .zero)
+        movableView.frame = CGRect(x: 0, y: 0, width: webView.frame.width, height: 20)
+        webView.addSubview(movableView)
+    }
+    
 }
 
 // MARK: - Delegates

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281F979920E9588A0033D930 /* WindowMovableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F979820E9588A0033D930 /* WindowMovableView.swift */; };
 		286AD73F20D9061400B2F45F /* custom.css in Resources */ = {isa = PBXBuildFile; fileRef = 286AD73E20D9061400B2F45F /* custom.css */; };
 		286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74020D909AB00B2F45F /* CustomWebView.swift */; };
 		286AD74320D90E1B00B2F45F /* CustomWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74220D90E1B00B2F45F /* CustomWindow.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		281F979820E9588A0033D930 /* WindowMovableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMovableView.swift; sourceTree = "<group>"; };
 		286AD73E20D9061400B2F45F /* custom.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = custom.css; sourceTree = "<group>"; };
 		286AD74020D909AB00B2F45F /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
 		286AD74220D90E1B00B2F45F /* CustomWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWindow.swift; sourceTree = "<group>"; };
@@ -45,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		281F979A20E958C00033D930 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				286AD74020D909AB00B2F45F /* CustomWebView.swift */,
+				286AD74220D90E1B00B2F45F /* CustomWindow.swift */,
+				281F979820E9588A0033D930 /* WindowMovableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		28DA92A920D90169004B2A6D = {
 			isa = PBXGroup;
 			children = (
@@ -66,10 +78,9 @@
 		28DA92B420D90169004B2A6D /* YT Music */ = {
 			isa = PBXGroup;
 			children = (
+				281F979A20E958C00033D930 /* Views */,
 				288C970E20D91A8B001672E1 /* YT Music.entitlements */,
 				28DA92B520D90169004B2A6D /* AppDelegate.swift */,
-				286AD74020D909AB00B2F45F /* CustomWebView.swift */,
-				286AD74220D90E1B00B2F45F /* CustomWindow.swift */,
 				28DA92B720D90169004B2A6D /* ViewController.swift */,
 				28DA92B920D9016A004B2A6D /* Assets.xcassets */,
 				28DA92BB20D9016A004B2A6D /* Main.storyboard */,
@@ -214,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				286AD74320D90E1B00B2F45F /* CustomWindow.swift in Sources */,
+				281F979920E9588A0033D930 /* WindowMovableView.swift in Sources */,
 				28DA92B820D90169004B2A6D /* ViewController.swift in Sources */,
 				28DA92B620D90169004B2A6D /* AppDelegate.swift in Sources */,
 				286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */,

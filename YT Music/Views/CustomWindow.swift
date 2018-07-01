@@ -18,7 +18,7 @@ class CustomWindow: NSWindow {
         
         titleVisibility = .hidden
         titlebarAppearsTransparent = true
-        styleMask.insert(.fullSizeContentView)
+//        styleMask.insert(.fullSizeContentView)
         
         identifier = NSUserInterfaceItemIdentifier(rawValue: "main")
         backgroundColor = NSColor(hue:0.00, saturation:0.00, brightness:0.07, alpha:1.00)

@@ -11,12 +11,8 @@ import WebKit
 
 class CustomWebView: WKWebView {
 
-    override var mouseDownCanMoveWindow: Bool {
-        return true
-    }
-    
     override var isOpaque: Bool {
         return true
     }
-    
+
 }
