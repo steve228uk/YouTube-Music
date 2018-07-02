@@ -11,6 +11,8 @@
 		286AD73F20D9061400B2F45F /* custom.css in Resources */ = {isa = PBXBuildFile; fileRef = 286AD73E20D9061400B2F45F /* custom.css */; };
 		286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74020D909AB00B2F45F /* CustomWebView.swift */; };
 		286AD74320D90E1B00B2F45F /* CustomWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74220D90E1B00B2F45F /* CustomWindow.swift */; };
+		28BB690E20EA56F100BD3AD6 /* DevMateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */; };
+		28BB691020EA576D00BD3AD6 /* DevMateKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		28DA92B620D90169004B2A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DA92B520D90169004B2A6D /* AppDelegate.swift */; };
 		28DA92B820D90169004B2A6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DA92B720D90169004B2A6D /* ViewController.swift */; };
 		28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92B920D9016A004B2A6D /* Assets.xcassets */; };
@@ -18,12 +20,27 @@
 		DC8A73953AF08F2621981F7F /* Pods_YT_Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1F2E78245D22CA0EB321BB /* Pods_YT_Music.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		28BB690F20EA575600BD3AD6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				28BB691020EA576D00BD3AD6 /* DevMateKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		281F979820E9588A0033D930 /* WindowMovableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMovableView.swift; sourceTree = "<group>"; };
 		286AD73E20D9061400B2F45F /* custom.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = custom.css; sourceTree = "<group>"; };
 		286AD74020D909AB00B2F45F /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
 		286AD74220D90E1B00B2F45F /* CustomWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWindow.swift; sourceTree = "<group>"; };
 		288C970E20D91A8B001672E1 /* YT Music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT Music.entitlements"; sourceTree = "<group>"; };
+		28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DevMateKit.framework; sourceTree = "<group>"; };
+		28BB691120EA57FB00BD3AD6 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		28DA92B220D90169004B2A6D /* YT Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YT Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28DA92B520D90169004B2A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28DA92B720D90169004B2A6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28BB690E20EA56F100BD3AD6 /* DevMateKit.framework in Frameworks */,
 				DC8A73953AF08F2621981F7F /* Pods_YT_Music.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +96,7 @@
 		28DA92B420D90169004B2A6D /* YT Music */ = {
 			isa = PBXGroup;
 			children = (
+				28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */,
 				281F979A20E958C00033D930 /* Views */,
 				288C970E20D91A8B001672E1 /* YT Music.entitlements */,
 				28DA92B520D90169004B2A6D /* AppDelegate.swift */,
@@ -86,6 +105,7 @@
 				28DA92BB20D9016A004B2A6D /* Main.storyboard */,
 				28DA92BE20D9016A004B2A6D /* Info.plist */,
 				286AD73E20D9061400B2F45F /* custom.css */,
+				28BB691120EA57FB00BD3AD6 /* Bridge.h */,
 			);
 			path = "YT Music";
 			sourceTree = "<group>";
@@ -119,6 +139,7 @@
 				28DA92AF20D90169004B2A6D /* Frameworks */,
 				28DA92B020D90169004B2A6D /* Resources */,
 				197CCBA018FB601CA041E877 /* [CP] Embed Pods Frameworks */,
+				28BB690F20EA575600BD3AD6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -368,6 +389,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = B598AEF9ZM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YT\\ Music",
+					"$(PROJECT_DIR)/YT\\ Music",
+					"$(PROJECT_DIR)/YT\\ Music/DevMateKit.framework/Frameworks",
+				);
 				INFOPLIST_FILE = "YT Music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,6 +403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.wearecocoon.YT-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/YT Music/Bridge.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -389,6 +417,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = B598AEF9ZM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YT\\ Music",
+					"$(PROJECT_DIR)/YT\\ Music",
+					"$(PROJECT_DIR)/YT\\ Music/DevMateKit.framework/Frameworks",
+				);
 				INFOPLIST_FILE = "YT Music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -397,6 +431,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.wearecocoon.YT-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/YT Music/Bridge.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
