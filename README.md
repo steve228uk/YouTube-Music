@@ -1,6 +1,8 @@
-## YouTube Music for Mac
+## YT Music
 
-A simple Mac app wrapper using WKWebView for [YouTube Music](https://music.youtube.com).
+A simple Mac app wrapper using WKWebView for [YouTube Music](https://music.youtube.com) that allows YouTube Music to run as a standalone process with media key support.
+
+> Disclaimer: YT Music is an unofficial application and not affiliated with YouTube or Google Inc. in any way. "YouTube", "YouTube Music" and the "YouTube Logo" are registered trademarks of Google Inc.
 
 ### Installation
 
@@ -13,11 +15,6 @@ The latest binary can also be found on the releases page or clone and compile in
 #### Homebrew
 
 If [homebrew](https://brew.sh) is installed, you can also use `brew tap caskroom/cask && brew cask install yt-music`
-
-## Features
-
-- Simple app to run YouTube Music as a standalone process
-- Media key support!
 
 ## Screenshots
 
