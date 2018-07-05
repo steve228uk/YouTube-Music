@@ -30,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainWindowController?.window?.isExcludedFromWindowsMenu = true
         mainWindowController?.showWindow(self)
         mainWindowController?.window?.makeKeyAndOrderFront(self)
+
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
