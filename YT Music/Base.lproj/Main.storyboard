@@ -170,6 +170,17 @@
                                                 <action selector="previousTrack:" target="Ady-hI-5gd" id="heq-zF-PP6"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="0Ku-CO-331"/>
+                                        <menuItem title="Shuffle" keyEquivalent="s" id="ZZg-XZ-mDf">
+                                            <connections>
+                                                <action selector="shuffleTracks:" target="Ady-hI-5gd" id="zrI-kM-qzO"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Repeat" keyEquivalent="r" id="cJf-AS-lZ7">
+                                            <connections>
+                                                <action selector="repeatTracks:" target="Ady-hI-5gd" id="81t-sq-vlN"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="Y4d-Hi-54I"/>
                                         <menuItem title="Like" keyEquivalent="l" id="GYC-cp-9M7">
                                             <connections>

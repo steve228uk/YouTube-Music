@@ -49,6 +49,14 @@ extension ViewController: MediaKeyTapDelegate {
         clickElement(className: "dislike")
     }
     
+    @objc func shuffleTracks() {
+        clickElement(className: "shuffle")
+    }
+    
+    @objc func repeatTracks() {
+        clickElement(className: "repeat")
+    }
+    
     func clickElement(className: String) {
         let js = "var elements = document.getElementsByClassName('\(className)'); if(elements.length > 0) { elements[0].click(); }";
         webView.evaluateJavaScript(js) { (_, error) in

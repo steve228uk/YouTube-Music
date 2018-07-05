@@ -23,6 +23,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "Next", action: #selector(nextTrack), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Previous", action: #selector(previousTrack), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Shuffle", action: #selector(shuffleTracks), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Repeat", action: #selector(repeatTracks), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Like", action: #selector(likeTrack), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Dislike", action: #selector(dislikeTrack), keyEquivalent: ""))
         return menu
@@ -76,6 +79,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func dislikeTrack(_ sender: Any?) {
         mainWindowController?.window?.contentViewController?
             .performSelector(onMainThread: #selector(ViewController.dislikeTrack), with: nil, waitUntilDone: true)
+    }
+    
+    @objc func repeatTracks(_ sender: Any?) {
+        mainWindowController?.window?.contentViewController?
+            .performSelector(onMainThread: #selector(ViewController.repeatTracks), with: nil, waitUntilDone: true)
+    }
+    
+    @objc func shuffleTracks(_ sender: Any?) {
+        mainWindowController?.window?.contentViewController?
+            .performSelector(onMainThread: #selector(ViewController.shuffleTracks), with: nil, waitUntilDone: true)
     }
     
 }
