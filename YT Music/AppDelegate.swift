@@ -18,9 +18,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     lazy var dockMenu: NSMenu = {
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Play", action: #selector(playPause), keyEquivalent: "Space"))
+        menu.addItem(NSMenuItem(title: "Play", action: #selector(playPause), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Next", action: #selector(nextTrack), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Previous", action: #selector(previousTrack), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Like", action: #selector(likeTrack), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Dislike", action: #selector(dislikeTrack), keyEquivalent: ""))
         return menu
     }()
     
@@ -46,19 +50,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return dockMenu
     }
     
-    @objc func playPause() {
+    // MARK: - Actions
+    // These are here because if the window is closed `ViewController` can't be first responder :(
+    
+    @objc func playPause(_ sender: Any?) {
         mainWindowController?.window?.contentViewController?
             .performSelector(onMainThread: #selector(ViewController.playPause), with: nil, waitUntilDone: true)
     }
     
-    @objc func nextTrack() {
+    @objc func nextTrack(_ sender: Any?) {
         mainWindowController?.window?.contentViewController?
             .performSelector(onMainThread: #selector(ViewController.nextTrack), with: nil, waitUntilDone: true)
     }
     
-    @objc func previousTrack() {
+    @objc func previousTrack(_ sender: Any?) {
         mainWindowController?.window?.contentViewController?
             .performSelector(onMainThread: #selector(ViewController.previousTrack), with: nil, waitUntilDone: true)
+    }
+    
+    @objc func likeTrack(_ sender: Any?) {
+        mainWindowController?.window?.contentViewController?
+            .performSelector(onMainThread: #selector(ViewController.likeTrack), with: nil, waitUntilDone: true)
+    }
+    
+    @objc func dislikeTrack(_ sender: Any?) {
+        mainWindowController?.window?.contentViewController?
+            .performSelector(onMainThread: #selector(ViewController.dislikeTrack), with: nil, waitUntilDone: true)
     }
     
 }

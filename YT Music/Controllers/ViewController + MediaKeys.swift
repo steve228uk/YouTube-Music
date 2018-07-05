@@ -41,6 +41,14 @@ extension ViewController: MediaKeyTapDelegate {
         clickElement(className: "previous-button")
     }
     
+    @objc func likeTrack() {
+        clickElement(className: "like")
+    }
+    
+    @objc func dislikeTrack() {
+        clickElement(className: "dislike")
+    }
+    
     func clickElement(className: String) {
         let js = "var elements = document.getElementsByClassName('\(className)'); if(elements.length > 0) { elements[0].click(); }";
         webView.evaluateJavaScript(js) { (_, error) in

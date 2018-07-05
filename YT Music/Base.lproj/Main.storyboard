@@ -149,6 +149,41 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Playback" id="H6J-Tx-JYS" userLabel="Playback">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Playback" id="wOk-ZC-hMZ">
+                                    <items>
+                                        <menuItem title="Play" keyEquivalent=" " id="isL-fL-kUD">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="playPause:" target="Ady-hI-5gd" id="Ald-Ii-Mr6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="a6j-NK-H5F"/>
+                                        <menuItem title="Next" keyEquivalent="" id="aNu-JY-GDR">
+                                            <connections>
+                                                <action selector="nextTrack:" target="Ady-hI-5gd" id="pzh-e5-buK"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Previous" keyEquivalent="" id="zwq-Um-Cjf">
+                                            <connections>
+                                                <action selector="previousTrack:" target="Ady-hI-5gd" id="heq-zF-PP6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Y4d-Hi-54I"/>
+                                        <menuItem title="Like" keyEquivalent="l" id="GYC-cp-9M7">
+                                            <connections>
+                                                <action selector="likeTrack:" target="Ady-hI-5gd" id="Zpy-uj-vZe"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Dislike" keyEquivalent="d" id="SC7-ft-qWs">
+                                            <connections>
+                                                <action selector="dislikeTrack:" target="Ady-hI-5gd" id="eoH-hC-yZ2"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
