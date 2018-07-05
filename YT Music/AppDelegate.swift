@@ -10,10 +10,18 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
+    
     lazy var mainWindowController: NSWindowController? = {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         return storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("main")) as? NSWindowController
+    }()
+    
+    lazy var dockMenu: NSMenu = {
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Play", action: #selector(playPause), keyEquivalent: "Space"))
+        menu.addItem(NSMenuItem(title: "Next", action: #selector(nextTrack), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Previous", action: #selector(previousTrack), keyEquivalent: ""))
+        return menu
     }()
     
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -34,11 +42,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDockMenu(_ sender: NSApplication) -> NSMenu? {
-        let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Play/Pause", action: #selector(ViewController.playPause), keyEquivalent: "Space"))
-        menu.addItem(NSMenuItem(title: "Next", action: #selector(ViewController.nextTrack), keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Previous", action: #selector(ViewController.previousTrack), keyEquivalent: ""))
-        return menu
+        return dockMenu
+    }
+    
+    @objc func playPause() {
+        mainWindowController?.window?.contentViewController?
+            .performSelector(onMainThread: #selector(ViewController.playPause), with: nil, waitUntilDone: true)
+    }
+    
+    @objc func nextTrack() {
+        mainWindowController?.window?.contentViewController?
+            .performSelector(onMainThread: #selector(ViewController.nextTrack), with: nil, waitUntilDone: true)
+    }
+    
+    @objc func previousTrack() {
+        mainWindowController?.window?.contentViewController?
+            .performSelector(onMainThread: #selector(ViewController.previousTrack), with: nil, waitUntilDone: true)
     }
     
 }

@@ -8,10 +8,12 @@
 
 import Cocoa
 import WebKit
+import MediaKeyTap
 
 class ViewController: NSViewController {
 
     var webView: CustomWebView!
+    var userContentController: WKUserContentController!
     var movableView: WindowMovableView!
     var mediaKeyTap: MediaKeyTap?
     var backButton: NSButton!
@@ -31,19 +33,17 @@ class ViewController: NSViewController {
         let request = URLRequest(url: url)
         webView.load(request)
         
-        backObservation = webView.observe(\CustomWebView.canGoBack) { (webView, _) in
-            self.backButton.isEnabled = webView.canGoBack
-            self.backButton.image = webView.canGoBack ? #imageLiteral(resourceName: "Back Arrow Active") : #imageLiteral(resourceName: "Back Arrow Inactive")
-        }
-        
-        forwardObservation = webView.observe(\CustomWebView.canGoForward) { (webView, _) in
-            self.forwardButton.isEnabled = webView.canGoForward
-            self.forwardButton.image = webView.canGoForward ? #imageLiteral(resourceName: "Forward Arrow Active") : #imageLiteral(resourceName: "Forward Arrow Inactive")
-        }
+        addObservers()
     }
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
+        
+        userContentController = WKUserContentController()
+        userContentController.add(MediaCenter.default, name: "observer")
+        webConfiguration.userContentController = userContentController
+        
+        
         webView = CustomWebView(frame: .zero, configuration: webConfiguration)
         webView.wantsLayer = true
         webView.layerContentsRedrawPolicy = .onSetNeedsDisplay
@@ -85,21 +85,15 @@ class ViewController: NSViewController {
         
     }
     
-    func injectCustomCSS() {
-        guard let cssURL = Bundle.main.url(forResource: "custom", withExtension: "css"),
-        let css = try? String(contentsOf: cssURL) else {
-            return
+    func addObservers() {
+        backObservation = webView.observe(\CustomWebView.canGoBack) { (webView, _) in
+            self.backButton.isEnabled = webView.canGoBack
+            self.backButton.image = webView.canGoBack ? #imageLiteral(resourceName: "Back Arrow Active") : #imageLiteral(resourceName: "Back Arrow Inactive")
         }
         
-        var js = "var style = document.createElement('style'); style.innerHTML = '\(css)'; document.head.appendChild(style);"
-        js = js.replacingOccurrences(of: "\n", with: "")
-        js = js.replacingOccurrences(of: "{", with: "\\{")
-        js = js.replacingOccurrences(of: "}", with: "\\}")
-        
-        webView.evaluateJavaScript(js) { (_, error) in
-            if let error = error {
-                print(error)
-            }
+        forwardObservation = webView.observe(\CustomWebView.canGoForward) { (webView, _) in
+            self.forwardButton.isEnabled = webView.canGoForward
+            self.forwardButton.image = webView.canGoForward ? #imageLiteral(resourceName: "Forward Arrow Active") : #imageLiteral(resourceName: "Forward Arrow Inactive")
         }
     }
     
@@ -159,7 +153,41 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
         }
         
         injectCustomCSS()
+        injectObservers()
         view.animator().alphaValue = 1
+    }
+    
+    func injectCustomCSS() {
+        guard let cssURL = Bundle.main.url(forResource: "custom", withExtension: "css"),
+        let css = try? String(contentsOf: cssURL) else {
+            return
+        }
+        
+        var js = "var style = document.createElement('style'); style.innerHTML = '\(css)'; document.head.appendChild(style);"
+        js = js.replacingOccurrences(of: "\n", with: "")
+        js = js.replacingOccurrences(of: "{", with: "\\{")
+        js = js.replacingOccurrences(of: "}", with: "\\}")
+        
+        webView.evaluateJavaScript(js) { (_, error) in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
+    
+    /// Injects observers that the WKScriptMessageHandler will hear back from.
+    /// These are used to detect when a track is playing etc.
+    func injectObservers() {
+        guard let jsURL = Bundle.main.url(forResource: "observer", withExtension: "js"),
+        let js = try? String(contentsOf: jsURL) else {
+            return
+        }
+        
+        webView.evaluateJavaScript(js) { (_, error) in
+            if let error = error {
+                print(error)
+            }
+        }
     }
 
 }
