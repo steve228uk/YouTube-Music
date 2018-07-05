@@ -17,10 +17,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        
         DevMateKit.sendTrackingReport(nil, delegate: nil)
         
-        
+        mainWindowController?.window?.isExcludedFromWindowsMenu = true
         mainWindowController?.showWindow(self)
         mainWindowController?.window?.makeKeyAndOrderFront(self)
     }
@@ -32,6 +31,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         return true
+    }
+    
+    func applicationDockMenu(_ sender: NSApplication) -> NSMenu? {
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Play/Pause", action: #selector(ViewController.playPause), keyEquivalent: "Space"))
+        menu.addItem(NSMenuItem(title: "Next", action: #selector(ViewController.nextTrack), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Previous", action: #selector(ViewController.previousTrack), keyEquivalent: ""))
+        return menu
     }
     
 }

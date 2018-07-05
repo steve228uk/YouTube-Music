@@ -9,6 +9,7 @@
 import Cocoa
 import WebKit
 import MediaKeyTap
+import MediaPlayer
 
 class ViewController: NSViewController {
 
@@ -187,14 +188,17 @@ extension ViewController: MediaKeyTapDelegate {
         }
     }
     
+    @objc
     func playPause() {
         clickElement(className: "play-pause-button")
     }
     
+    @objc
     func nextTrack() {
         clickElement(className: "next-button")
     }
     
+    @objc
     func previousTrack() {
         clickElement(className: "previous-button")
     }
