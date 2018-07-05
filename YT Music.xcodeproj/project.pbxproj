@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2802617720EE629A001FDDCC /* ViewController + MediaKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */; };
 		281F979920E9588A0033D930 /* WindowMovableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F979820E9588A0033D930 /* WindowMovableView.swift */; };
 		286AD73F20D9061400B2F45F /* custom.css in Resources */ = {isa = PBXBuildFile; fileRef = 286AD73E20D9061400B2F45F /* custom.css */; };
 		286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74020D909AB00B2F45F /* CustomWebView.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + MediaKeys.swift"; sourceTree = "<group>"; };
 		281F979820E9588A0033D930 /* WindowMovableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMovableView.swift; sourceTree = "<group>"; };
 		286AD73E20D9061400B2F45F /* custom.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = custom.css; sourceTree = "<group>"; };
 		286AD74020D909AB00B2F45F /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2802617420EE6260001FDDCC /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28DA92B720D90169004B2A6D /* ViewController.swift */,
+				2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2802617520EE6271001FDDCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				286AD73E20D9061400B2F45F /* custom.css */,
+				28DA92B920D9016A004B2A6D /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		281F979A20E958C00033D930 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,14 +117,13 @@
 			isa = PBXGroup;
 			children = (
 				28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */,
-				281F979A20E958C00033D930 /* Views */,
 				288C970E20D91A8B001672E1 /* YT Music.entitlements */,
+				2802617520EE6271001FDDCC /* Supporting Files */,
+				281F979A20E958C00033D930 /* Views */,
+				2802617420EE6260001FDDCC /* View Controller */,
 				28DA92B520D90169004B2A6D /* AppDelegate.swift */,
-				28DA92B720D90169004B2A6D /* ViewController.swift */,
-				28DA92B920D9016A004B2A6D /* Assets.xcassets */,
 				28DA92BB20D9016A004B2A6D /* Main.storyboard */,
 				28DA92BE20D9016A004B2A6D /* Info.plist */,
-				286AD73E20D9061400B2F45F /* custom.css */,
 				28BB691120EA57FB00BD3AD6 /* Bridge.h */,
 			);
 			path = "YT Music";
@@ -245,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2802617720EE629A001FDDCC /* ViewController + MediaKeys.swift in Sources */,
 				286AD74320D90E1B00B2F45F /* CustomWindow.swift in Sources */,
 				281F979920E9588A0033D930 /* WindowMovableView.swift in Sources */,
 				28DA92B820D90169004B2A6D /* ViewController.swift in Sources */,

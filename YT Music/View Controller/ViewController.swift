@@ -8,8 +8,6 @@
 
 import Cocoa
 import WebKit
-import MediaKeyTap
-import MediaPlayer
 
 class ViewController: NSViewController {
 
@@ -164,52 +162,4 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
         view.animator().alphaValue = 1
     }
 
-}
-
-// MARK: - Media Keys
-
-extension ViewController: MediaKeyTapDelegate {
-    
-    func handle(mediaKey: MediaKey, event: KeyEvent) {
-        guard webView.url?.host == "music.youtube.com" else {
-            return
-        }
-        
-        switch mediaKey {
-        case .playPause:
-            playPause()
-            break
-        case .next, .fastForward:
-            nextTrack()
-            break
-        case.previous, .rewind:
-            previousTrack()
-            break
-        }
-    }
-    
-    @objc
-    func playPause() {
-        clickElement(className: "play-pause-button")
-    }
-    
-    @objc
-    func nextTrack() {
-        clickElement(className: "next-button")
-    }
-    
-    @objc
-    func previousTrack() {
-        clickElement(className: "previous-button")
-    }
-    
-    func clickElement(className: String) {
-        let js = "var elements = document.getElementsByClassName('\(className)'); if(elements.length > 0) { elements[0].click(); }";
-        webView.evaluateJavaScript(js) { (_, error) in
-            if let error = error {
-                print(error)
-            }
-        }
-    }
-    
 }
