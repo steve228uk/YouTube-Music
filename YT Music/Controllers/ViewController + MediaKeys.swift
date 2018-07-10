@@ -8,7 +8,10 @@
 
 import Cocoa
 import MediaKeyTap
+
+#if canImport(MediaPlayer)
 import MediaPlayer
+#endif
 
 extension ViewController: MediaKeyTapDelegate {
     

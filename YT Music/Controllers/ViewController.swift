@@ -61,25 +61,27 @@ class ViewController: NSViewController {
         
         super.viewDidLayout()
 
+        let y = webView.isFlipped ? 22 : webView.frame.height - 39
+        
         if let btn = view.window?.standardWindowButton(.closeButton) {
             btn.removeFromSuperview()
-            btn.setFrameOrigin(NSPoint(x: 17, y: 22))
+            btn.setFrameOrigin(NSPoint(x: 17, y: y))
             view.addSubview(btn)
         }
         
         if let btn = view.window?.standardWindowButton(.miniaturizeButton) {
             btn.removeFromSuperview()
-            btn.setFrameOrigin(NSPoint(x: 37, y: 22))
+            btn.setFrameOrigin(NSPoint(x: 37, y: y))
             view.addSubview(btn)
         }
         
         if let btn = view.window?.standardWindowButton(.zoomButton) {
             btn.removeFromSuperview()
-            btn.setFrameOrigin(NSPoint(x: 57, y: 22))
+            btn.setFrameOrigin(NSPoint(x: 57, y: y))
             view.addSubview(btn)
         }
 
-        movableView.frame = CGRect(x: 0, y: 0, width: webView.frame.width, height: 20)
+        movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 20, width: webView.frame.width, height: 20)
         
     }
     
@@ -106,9 +108,9 @@ class ViewController: NSViewController {
         backButton.bezelStyle = .shadowlessSquare
         backButton.isBordered = false
         
-        var frame = backButton.frame
-        frame.origin = CGPoint(x: 90, y: 15)
-        backButton.frame = frame
+        let y = webView.isFlipped ? 14 : webView.frame.height - 46
+        
+        backButton.frame = CGRect(x: 90, y: y, width: 32, height: 32)
         
         webView.addSubview(backButton)
         
@@ -120,9 +122,7 @@ class ViewController: NSViewController {
         forwardButton.bezelStyle = .shadowlessSquare
         forwardButton.isBordered = false
         
-        frame = forwardButton.frame
-        frame.origin = CGPoint(x: 130, y: 15)
-        forwardButton.frame = frame
+        forwardButton.frame = CGRect(x: 130, y: y, width: 32, height: 32)
         
         webView.addSubview(forwardButton)
     }

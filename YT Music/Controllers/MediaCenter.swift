@@ -8,8 +8,11 @@
 
 import Cocoa
 import WebKit
-import MediaPlayer
 import AVFoundation
+
+#if canImport(MediaPlayer)
+import MediaPlayer
+#endif
 
 class MediaCenter: NSObject, WKScriptMessageHandler, NSUserNotificationCenterDelegate {
     

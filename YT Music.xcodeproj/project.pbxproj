@@ -10,6 +10,7 @@
 		2802617720EE629A001FDDCC /* ViewController + MediaKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */; };
 		2802617920EE71C6001FDDCC /* observer.js in Resources */ = {isa = PBXBuildFile; fileRef = 2802617820EE71C6001FDDCC /* observer.js */; };
 		2802617B20EE802B001FDDCC /* MediaCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802617A20EE802B001FDDCC /* MediaCenter.swift */; };
+		2818F51420F54D27006CEBB4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818F51320F54D27006CEBB4 /* MediaPlayer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		281CB55620F516110050D26D /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 281CB55520F516100050D26D /* silence.mp3 */; };
 		281F979920E9588A0033D930 /* WindowMovableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F979820E9588A0033D930 /* WindowMovableView.swift */; };
 		286AD73F20D9061400B2F45F /* custom.css in Resources */ = {isa = PBXBuildFile; fileRef = 286AD73E20D9061400B2F45F /* custom.css */; };
@@ -41,6 +42,7 @@
 		2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + MediaKeys.swift"; sourceTree = "<group>"; };
 		2802617820EE71C6001FDDCC /* observer.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = observer.js; sourceTree = "<group>"; };
 		2802617A20EE802B001FDDCC /* MediaCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCenter.swift; sourceTree = "<group>"; };
+		2818F51320F54D27006CEBB4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		281CB55520F516100050D26D /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 		281F979820E9588A0033D930 /* WindowMovableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMovableView.swift; sourceTree = "<group>"; };
 		286AD73E20D9061400B2F45F /* custom.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = custom.css; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2818F51420F54D27006CEBB4 /* MediaPlayer.framework in Frameworks */,
 				28BB690E20EA56F100BD3AD6 /* DevMateKit.framework in Frameworks */,
 				DC8A73953AF08F2621981F7F /* Pods_YT_Music.framework in Frameworks */,
 			);
@@ -141,6 +144,7 @@
 		320842A7457275F8A861430A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2818F51320F54D27006CEBB4 /* MediaPlayer.framework */,
 				6E1F2E78245D22CA0EB321BB /* Pods_YT_Music.framework */,
 			);
 			name = Frameworks;
