@@ -97,7 +97,11 @@ class ViewController: NSViewController {
     }
     
     func addNavigationButtons() {
-        backButton = NSButton(image: #imageLiteral(resourceName: "Back Arrow Inactive"), target: self, action: #selector(backButtonClicked(_:)))
+        
+        backButton = NSButton()
+        backButton.image = #imageLiteral(resourceName: "Back Arrow Inactive")
+        backButton.target = self
+        backButton.action = #selector(backButtonClicked(_:))
         backButton.isEnabled = false
         backButton.bezelStyle = .shadowlessSquare
         backButton.isBordered = false
@@ -108,7 +112,10 @@ class ViewController: NSViewController {
         
         webView.addSubview(backButton)
         
-        forwardButton = NSButton(image: #imageLiteral(resourceName: "Forward Arrow Inactive"), target: self, action: #selector(forwardButtonClicked(_:)))
+        forwardButton = NSButton()
+        forwardButton.image = #imageLiteral(resourceName: "Forward Arrow Inactive")
+        forwardButton.target = self
+        forwardButton.action = #selector(forwardButtonClicked(_:))
         forwardButton.isEnabled = false
         forwardButton.bezelStyle = .shadowlessSquare
         forwardButton.isBordered = false
