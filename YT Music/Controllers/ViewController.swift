@@ -61,7 +61,7 @@ class ViewController: NSViewController {
         
         super.viewDidLayout()
 
-        let y = webView.isFlipped ? 22 : webView.frame.height - 39
+        var y = webView.isFlipped ? 22 : webView.frame.height - 39
         
         if let btn = view.window?.standardWindowButton(.closeButton) {
             btn.removeFromSuperview()
@@ -81,7 +81,18 @@ class ViewController: NSViewController {
             view.addSubview(btn)
         }
 
+        
         movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 20, width: webView.frame.width, height: 20)
+        
+        y = webView.isFlipped ? 14 : webView.frame.height - 46
+        
+        var frame = backButton.frame
+        frame.origin = CGPoint(x: 90, y: y)
+        backButton.frame = frame
+        
+        frame = forwardButton.frame
+        frame.origin = CGPoint(x: 130, y: y)
+        forwardButton.frame = frame
         
     }
     
