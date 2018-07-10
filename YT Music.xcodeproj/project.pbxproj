@@ -10,6 +10,7 @@
 		2802617720EE629A001FDDCC /* ViewController + MediaKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */; };
 		2802617920EE71C6001FDDCC /* observer.js in Resources */ = {isa = PBXBuildFile; fileRef = 2802617820EE71C6001FDDCC /* observer.js */; };
 		2802617B20EE802B001FDDCC /* MediaCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802617A20EE802B001FDDCC /* MediaCenter.swift */; };
+		281CB55620F516110050D26D /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 281CB55520F516100050D26D /* silence.mp3 */; };
 		281F979920E9588A0033D930 /* WindowMovableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281F979820E9588A0033D930 /* WindowMovableView.swift */; };
 		286AD73F20D9061400B2F45F /* custom.css in Resources */ = {isa = PBXBuildFile; fileRef = 286AD73E20D9061400B2F45F /* custom.css */; };
 		286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74020D909AB00B2F45F /* CustomWebView.swift */; };
@@ -40,6 +41,7 @@
 		2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + MediaKeys.swift"; sourceTree = "<group>"; };
 		2802617820EE71C6001FDDCC /* observer.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = observer.js; sourceTree = "<group>"; };
 		2802617A20EE802B001FDDCC /* MediaCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCenter.swift; sourceTree = "<group>"; };
+		281CB55520F516100050D26D /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 		281F979820E9588A0033D930 /* WindowMovableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMovableView.swift; sourceTree = "<group>"; };
 		286AD73E20D9061400B2F45F /* custom.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = custom.css; sourceTree = "<group>"; };
 		286AD74020D909AB00B2F45F /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		2802617520EE6271001FDDCC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				281CB55520F516100050D26D /* silence.mp3 */,
 				286AD73E20D9061400B2F45F /* custom.css */,
 				2802617820EE71C6001FDDCC /* observer.js */,
 				28DA92B920D9016A004B2A6D /* Assets.xcassets */,
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281CB55620F516110050D26D /* silence.mp3 in Resources */,
 				286AD73F20D9061400B2F45F /* custom.css in Resources */,
 				28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */,
 				2802617920EE71C6001FDDCC /* observer.js in Resources */,

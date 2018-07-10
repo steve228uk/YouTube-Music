@@ -24,15 +24,13 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mediaKeyTap = MediaKeyTap(delegate: self)
-        mediaKeyTap?.start()
-        
         view.alphaValue = 0
         
         let url = URL(string: "https://music.youtube.com")!
         let request = URLRequest(url: url)
         webView.load(request)
         
+        registerRemoteCommands()
         addObservers()
     }
     
@@ -95,6 +93,7 @@ class ViewController: NSViewController {
             self.forwardButton.isEnabled = webView.canGoForward
             self.forwardButton.image = webView.canGoForward ? #imageLiteral(resourceName: "Forward Arrow Active") : #imageLiteral(resourceName: "Forward Arrow Inactive")
         }
+    
     }
     
     func addNavigationButtons() {

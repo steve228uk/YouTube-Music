@@ -8,8 +8,23 @@
 
 import Cocoa
 import MediaKeyTap
+import MediaPlayer
 
 extension ViewController: MediaKeyTapDelegate {
+    
+    func registerRemoteCommands() {
+        if #available(OSX 10.12.2, *) {
+            let commandCenter = MPRemoteCommandCenter.shared()
+            commandCenter.playCommand.addTarget(self, action: #selector(playPause))
+            commandCenter.pauseCommand.addTarget(self, action: #selector(playPause))
+            commandCenter.togglePlayPauseCommand.addTarget(self, action: #selector(playPause))
+            commandCenter.nextTrackCommand.addTarget(self, action: #selector(nextTrack))
+            commandCenter.previousTrackCommand.addTarget(self, action: #selector(previousTrack))
+        } else {
+            mediaKeyTap = MediaKeyTap(delegate: self)
+            mediaKeyTap?.start()
+        }
+    }
     
     func handle(mediaKey: MediaKey, event: KeyEvent) {
         guard webView.url?.host == "music.youtube.com" else {
@@ -59,7 +74,7 @@ extension ViewController: MediaKeyTapDelegate {
     
     func clickElement(className: String) {
         let js = "var elements = document.getElementsByClassName('\(className)'); if(elements.length > 0) { elements[0].click(); }";
-        webView.evaluateJavaScript(js) { (_, error) in
+        self.webView.evaluateJavaScript(js) { (_, error) in
             if let error = error {
                 print(error)
             }

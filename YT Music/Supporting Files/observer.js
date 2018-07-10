@@ -8,8 +8,8 @@ window.setTimeout(function() {
       title: document.querySelector('.ytmusic-player-bar.title').textContent,
       by: document.querySelector('.ytmusic-player-bar.byline').textContent,
       thumbnail: document.querySelector('#img').getAttribute('src'),
-      progress: bar.getAttribute('value'),
-      length: bar.getAttribute('aria-valuemax'),
+      progress: parseInt(bar.getAttribute('value')),
+      length: parseInt(bar.getAttribute('aria-valuemax')),
       isPlaying: document.querySelector('.play-pause-button.ytmusic-player-bar').getAttribute('title') == window.yt.msgs_.YTP_PAUSE
     })
   });
