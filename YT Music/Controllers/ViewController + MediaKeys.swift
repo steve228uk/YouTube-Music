@@ -23,6 +23,7 @@ extension ViewController: MediaKeyTapDelegate {
             commandCenter.togglePlayPauseCommand.addTarget(self, action: #selector(playPause))
             commandCenter.nextTrackCommand.addTarget(self, action: #selector(nextTrack))
             commandCenter.previousTrackCommand.addTarget(self, action: #selector(previousTrack))
+            commandCenter.changePlaybackPositionCommand.addTarget(self, action: #selector(seek(_:)))
         } else {
             mediaKeyTap = MediaKeyTap(delegate: self)
             mediaKeyTap?.start()
@@ -77,7 +78,24 @@ extension ViewController: MediaKeyTapDelegate {
     
     func clickElement(className: String) {
         let js = "var elements = document.getElementsByClassName('\(className)'); if(elements.length > 0) { elements[0].click(); }";
-        self.webView.evaluateJavaScript(js) { (_, error) in
+        webView.evaluateJavaScript(js) { (_, error) in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
+    
+    @available(OSX 10.12.2, *)
+    @objc func seek(_ notification: Any) {
+        guard let event = notification as? MPChangePlaybackPositionCommandEvent else { return }
+        seek(to: event.positionTime)
+    }
+    
+    func seek(to: TimeInterval) {
+        let rounded = Int(round(to))
+        let js = "document.querySelector('#movie_player video').currentTime = \(rounded);"
+        
+        webView.evaluateJavaScript(js) { (_, error) in
             if let error = error {
                 print(error)
             }
