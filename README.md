@@ -1,6 +1,12 @@
 ## YT Music
 
-A simple Mac app wrapper using WKWebView for [YouTube Music](https://music.youtube.com) that allows YouTube Music to run as a standalone process with media key support.
+A simple Mac app wrapper using WKWebView for [YouTube Music](https://music.youtube.com) that allows YouTube Music to run as a standalone process. Supports:
+
+- Media Keys
+- Keyboard shortcuts
+- "Now Playing" Notification Center widget
+- Touch Bar media controls and scrubber
+- System notifications when a new track plays
 
 > Disclaimer: YT Music is an unofficial application and not affiliated with YouTube or Google Inc. in any way. "YouTube", "YouTube Music" and the "YouTube Logo" are registered trademarks of Google Inc.
 
