@@ -49,35 +49,35 @@ extension ViewController: MediaKeyTapDelegate {
     }
     
     @objc func playPause() {
-        clickElement(className: "play-pause-button")
+        clickElement(selector: ".play-pause-button")
     }
     
     @objc func nextTrack() {
-        clickElement(className: "next-button")
+        clickElement(selector: ".next-button")
     }
     
     @objc func previousTrack() {
-        clickElement(className: "previous-button")
+        clickElement(selector: ".previous-button")
     }
     
     @objc func likeTrack() {
-        clickElement(className: "like")
+        clickElement(selector: ".ytmusic-player-bar .like")
     }
     
     @objc func dislikeTrack() {
-        clickElement(className: "dislike")
+        clickElement(selector: ".ytmusic-player-bar .dislike")
     }
     
     @objc func shuffleTracks() {
-        clickElement(className: "shuffle")
+        clickElement(selector: ".shuffle")
     }
     
     @objc func repeatTracks() {
-        clickElement(className: "repeat")
+        clickElement(selector: ".repeat")
     }
     
-    func clickElement(className: String) {
-        let js = "var elements = document.getElementsByClassName('\(className)'); if(elements.length > 0) { elements[0].click(); }";
+    func clickElement(selector: String) {
+        let js = "document.querySelector('\(selector)').click();";
         webView.evaluateJavaScript(js) { (_, error) in
             if let error = error {
                 print(error)
