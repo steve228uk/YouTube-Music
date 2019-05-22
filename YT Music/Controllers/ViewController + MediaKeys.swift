@@ -18,8 +18,8 @@ extension ViewController: MediaKeyTapDelegate {
     func registerRemoteCommands() {
         if #available(OSX 10.12.2, *) {
             let commandCenter = MPRemoteCommandCenter.shared()
-            commandCenter.playCommand.addTarget(self, action: #selector(playPause))
-            commandCenter.pauseCommand.addTarget(self, action: #selector(playPause))
+            commandCenter.playCommand.addTarget(self, action: #selector(play))
+            commandCenter.pauseCommand.addTarget(self, action: #selector(pause))
             commandCenter.togglePlayPauseCommand.addTarget(self, action: #selector(playPause))
             commandCenter.nextTrackCommand.addTarget(self, action: #selector(nextTrack))
             commandCenter.previousTrackCommand.addTarget(self, action: #selector(previousTrack))
@@ -50,6 +50,18 @@ extension ViewController: MediaKeyTapDelegate {
     
     @objc func playPause() {
         clickElement(selector: ".play-pause-button")
+    }
+    
+    @objc func pause() {
+        if (MediaCenter.default.isPlaying) {
+            clickElement(selector: ".play-pause-button")
+        }
+    }
+    
+    @objc func play() {
+        if (!MediaCenter.default.isPlaying) {
+            clickElement(selector: ".play-pause-button")
+        }
     }
     
     @objc func nextTrack() {
