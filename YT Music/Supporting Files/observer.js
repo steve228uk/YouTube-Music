@@ -10,7 +10,7 @@ window.setTimeout(function() {
       thumbnail: document.querySelector('#img').getAttribute('src'),
       progress: parseInt(bar.getAttribute('value')),
       length: parseInt(bar.getAttribute('aria-valuemax')),
-      isPlaying: document.querySelector('.play-pause-button.ytmusic-player-bar').getAttribute('title') == window.yt.msgs_.YTP_PAUSE
+      isPlaying: document.querySelector('.play-pause-button.ytmusic-player-bar').getAttribute('title') == window.yt.msgs_.PAUSE
     })
   });
   
