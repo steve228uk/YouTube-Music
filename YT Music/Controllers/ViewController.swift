@@ -25,13 +25,30 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         view.alphaValue = 0
-        
+
         let url = URL(string: "https://music.youtube.com")!
         let request = URLRequest(url: url)
+
         webView.load(request)
         
         registerRemoteCommands()
         addObservers()
+    }
+
+
+// add adblock support https://github.com/ShingoFukuyama/AdsBlock_WKWebView_for_iOS11
+    private func setupContentBlockFromFile() {
+        if let jsonFilePath = Bundle.main.path(forResource: "adblock.json", ofType: nil),
+           let jsonFileContent = try? String(contentsOfFile: jsonFilePath, encoding: String.Encoding.utf8) {
+            WKContentRuleListStore.default().compileContentRuleList(forIdentifier: "adblock rules", encodedContentRuleList: jsonFileContent) { [weak self] (contentRuleList, error) in
+                if let error = error {
+                    return
+                }
+                if let list = contentRuleList {
+                    self?.webView.configuration.userContentController.add(list)
+                }
+            }
+        }
     }
     
     override func loadView() {
@@ -40,7 +57,9 @@ class ViewController: NSViewController {
         userContentController = WKUserContentController()
         userContentController.add(MediaCenter.default, name: "observer")
         webConfiguration.userContentController = userContentController
-        
+
+        // add adblock support
+        setupContentBlockFromFile()
         
         webView = CustomWebView(frame: .zero, configuration: webConfiguration)
         webView.wantsLayer = true
