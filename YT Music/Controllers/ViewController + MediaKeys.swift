@@ -41,6 +41,18 @@ extension ViewController: MediaKeyTapDelegate {
         clickElement(selector: ".play-pause-button")
     }
     
+    @objc func pause() {
+        if (MediaCenter.default.isPlaying) {
+            clickElement(selector: ".play-pause-button")
+        }
+    }
+    
+    @objc func play() {
+        if (!MediaCenter.default.isPlaying) {
+            clickElement(selector: ".play-pause-button")
+        }
+    }
+    
     @objc func nextTrack() {
         clickElement(selector: ".next-button")
     }
