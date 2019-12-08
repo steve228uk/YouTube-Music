@@ -15,17 +15,6 @@ import MediaPlayer
 
 extension ViewController: MediaKeyTapDelegate {
     func registerRemoteCommands() {
-        if #available(OSX 10.12.2, *) {
-            let commandCenter = MPRemoteCommandCenter.shared()
-            commandCenter.playCommand.addTarget(self, action: #selector(play))
-            commandCenter.pauseCommand.addTarget(self, action: #selector(pause))
-            commandCenter.togglePlayPauseCommand.addTarget(self, action: #selector(playPause))
-            commandCenter.nextTrackCommand.addTarget(self, action: #selector(nextTrack))
-            commandCenter.nextTrackCommand.isEnabled = true
-            commandCenter.previousTrackCommand.addTarget(self, action: #selector(previousTrack))
-            commandCenter.previousTrackCommand.isEnabled = true
-            commandCenter.changePlaybackPositionCommand.addTarget(self, action: #selector(seek(_:)))
-        }
         mediaKeyTap = MediaKeyTap(delegate: self)
         mediaKeyTap?.start()
     }
