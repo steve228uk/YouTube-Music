@@ -22,7 +22,9 @@ extension ViewController: MediaKeyTapDelegate {
             commandCenter.pauseCommand.addTarget(self, action: #selector(pause))
             commandCenter.togglePlayPauseCommand.addTarget(self, action: #selector(playPause))
             commandCenter.nextTrackCommand.addTarget(self, action: #selector(nextTrack))
+            commandCenter.nextTrackCommand.isEnabled = true
             commandCenter.previousTrackCommand.addTarget(self, action: #selector(previousTrack))
+            commandCenter.previousTrackCommand.isEnabled = true
             commandCenter.changePlaybackPositionCommand.addTarget(self, action: #selector(seek(_:)))
         } else {
             mediaKeyTap = MediaKeyTap(delegate: self)
