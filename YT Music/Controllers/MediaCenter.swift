@@ -107,6 +107,11 @@ class MediaCenter: NSObject, WKScriptMessageHandler, NSUserNotificationCenterDel
         
         
         NSUserNotificationCenter.default.delegate = self
+
+        // Remove all other notifications
+        NSUserNotificationCenter.default.removeAllDeliveredNotifications()
+        
+        // Schedule the new notification
         NSUserNotificationCenter.default.deliver(notification)
         
         titleChanged = false
