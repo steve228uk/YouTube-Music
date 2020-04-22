@@ -57,27 +57,36 @@ class ViewController: NSViewController {
         view = webView
     }
     
+    func findViewByTag(tag: Int) -> NSView? {
+        return view.subviews.first(where: { (item) -> Bool in
+            item is NSButton && item.tag == tag
+        })
+    }
+    
     override func viewDidLayout() {
         
         super.viewDidLayout()
 
         var y = webView.isFlipped ? 22 : webView.frame.height - 39
         
-        if let btn = view.window?.standardWindowButton(.closeButton) {
+        if let btn = view.window?.standardWindowButton(.closeButton), findViewByTag(tag: 1000 + 1) == nil {
             btn.removeFromSuperview()
             btn.setFrameOrigin(NSPoint(x: 17, y: y))
+            btn.tag = 1000 + 1
             view.addSubview(btn)
         }
         
-        if let btn = view.window?.standardWindowButton(.miniaturizeButton) {
+        if let btn = view.window?.standardWindowButton(.miniaturizeButton), findViewByTag(tag: 1000 + 2) == nil {
             btn.removeFromSuperview()
             btn.setFrameOrigin(NSPoint(x: 37, y: y))
+            btn.tag = 1000 + 2
             view.addSubview(btn)
         }
         
-        if let btn = view.window?.standardWindowButton(.zoomButton) {
+        if let btn = view.window?.standardWindowButton(.zoomButton), findViewByTag(tag: 1000 + 3) == nil {
             btn.removeFromSuperview()
             btn.setFrameOrigin(NSPoint(x: 57, y: y))
+            btn.tag = 1000 + 3
             view.addSubview(btn)
         }
 
