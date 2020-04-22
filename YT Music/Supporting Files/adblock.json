@@ -1,0 +1,250 @@
+[
+{
+	"trigger": {
+		"url-filter": "^https?://",
+		"url-filter-is-case-sensitive": true
+	},
+	"action": {
+		"type": "css-display-none",
+		"selector": ".ad-container, .video-ads, .ytp-ad-progress-list"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^https?://([^/:]*\\.)?youtube\\.com[/:]",
+		"url-filter-is-case-sensitive": true
+	},
+	"action": {
+		"type": "css-display-none",
+		"selector": "[id=masthead-ad]"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?.*=adunit&",
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw"
+		]
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?doubleclick\\.net([^-_.%a-z0-9].*)?$",
+		"url-filter-is-case-sensitive": true,
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		],
+		"unless-top-url": [
+			"^[^:]+:(//)?([^/]+\\.)?doubleclick\\.net([^-_.%a-z0-9].*)?$"
+		],
+		"top-url-filter-is-case-sensitive": true
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?flashtalking\\.com",
+		"url-filter-is-case-sensitive": true,
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		]
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?googleadservices\\.com",
+		"url-filter-is-case-sensitive": true,
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		],
+		"unless-top-url": [
+			"^[^:]+:(//)?([^/]+\\.)?googleadservices\\.com"
+		],
+		"top-url-filter-is-case-sensitive": true
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?googlesyndication\\.com([^-_.%a-z0-9].*)?$",
+		"url-filter-is-case-sensitive": true,
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		],
+		"unless-top-url": [
+			"^[^:]+:(//)?([^/]+\\.)?googlesyndication\\.com([^-_.%a-z0-9].*)?$"
+		],
+		"top-url-filter-is-case-sensitive": true
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?s0\\.2mdn\\.net/ads",
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		],
+		"unless-top-url": [
+			"^[^:]+:(//)?([^/]+\\.)?s0\\.2mdn\\.net/ads"
+		]
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?www\\.google\\..*/pagead",
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		]
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^https?://([^/]+\\.)?www\\.youtube\\.com/\\[\\[computeemptygif_\\(\\)\\]\\]",
+		"resource-type": [
+			"image"
+		]
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?www\\.youtube\\.com/\\[\\[computethumbnailurl_\\(data\\.thumbnail\\)\\]\\]",
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		],
+		"unless-top-url": [
+			"^[^:]+:(//)?([^/]+\\.)?www\\.youtube\\.com/\\[\\[computethumbnailurl_\\(data\\.thumbnail\\)\\]\\]"
+		]
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?www\\.youtube\\.com/api/stats",
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		],
+		"unless-top-url": [
+			"^[^:]+:(//)?([^/]+\\.)?www\\.youtube\\.com/api/stats"
+		]
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?www\\.youtube\\.com/pagead",
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		],
+		"unless-top-url": [
+			"^[^:]+:(//)?([^/]+\\.)?www\\.youtube\\.com/pagead"
+		]
+	},
+	"action": {
+		"type": "block"
+	}
+},
+{
+	"trigger": {
+		"url-filter": "^[^:]+:(//)?([^/]+\\.)?www\\.youtube\\.com/ptracking",
+		"resource-type": [
+			"image",
+			"style-sheet",
+			"script",
+			"font",
+			"media",
+			"raw",
+			"document"
+		],
+		"unless-top-url": [
+			"^[^:]+:(//)?([^/]+\\.)?www\\.youtube\\.com/ptracking"
+		]
+	},
+	"action": {
+		"type": "block"
+	}
+}
+]

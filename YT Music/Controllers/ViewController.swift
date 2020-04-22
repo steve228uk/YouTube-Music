@@ -11,7 +11,7 @@ import WebKit
 import MediaKeyTap
 
 class ViewController: NSViewController {
-
+    
     var webView: CustomWebView!
     var userContentController: WKUserContentController!
     var movableView: WindowMovableView!
@@ -34,13 +34,32 @@ class ViewController: NSViewController {
         addObservers()
     }
     
+    // implementation reference https://github.com/ShingoFukuyama/AdsBlock_WKWebView_for_iOS11
+    // abp list to block content list https://github.com/adblockplus/abp2blocklist
+    // youtube abp rules https://github.com/kbinani/adblock-youtube-ads/
+    private func loadAdBlockRuleList() {
+        if let jsonFilePath = Bundle.main.path(forResource: "adblock.json", ofType: nil),
+            let jsonFileContent = try? String(contentsOfFile: jsonFilePath, encoding: String.Encoding.utf8) {
+            WKContentRuleListStore.default().compileContentRuleList(forIdentifier: "adblock rules", encodedContentRuleList: jsonFileContent) { (contentRuleList, error) in
+                if error != nil {
+                    return
+                }
+                if let list = contentRuleList {
+                    self.userContentController.add(list)
+                }
+            }
+        }
+    }
+    
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
         
         userContentController = WKUserContentController()
+        // load adblock rule list
+        loadAdBlockRuleList()
         userContentController.add(MediaCenter.default, name: "observer")
-        webConfiguration.userContentController = userContentController
         
+        webConfiguration.userContentController = userContentController
         
         webView = CustomWebView(frame: .zero, configuration: webConfiguration)
         webView.wantsLayer = true
@@ -60,7 +79,7 @@ class ViewController: NSViewController {
     override func viewDidLayout() {
         
         super.viewDidLayout()
-
+        
         var y = webView.isFlipped ? 22 : webView.frame.height - 39
         
         if let btn = view.window?.standardWindowButton(.closeButton) {
@@ -80,7 +99,7 @@ class ViewController: NSViewController {
             btn.setFrameOrigin(NSPoint(x: 57, y: y))
             view.addSubview(btn)
         }
-
+        
         
         movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 20, width: webView.frame.width, height: 20)
         
@@ -106,7 +125,7 @@ class ViewController: NSViewController {
             self.forwardButton.isEnabled = webView.canGoForward
             self.forwardButton.image = webView.canGoForward ? #imageLiteral(resourceName: "Forward Arrow Active") : #imageLiteral(resourceName: "Forward Arrow Inactive")
         }
-    
+        
     }
     
     func addNavigationButtons() {
@@ -145,7 +164,7 @@ class ViewController: NSViewController {
     @objc func forwardButtonClicked(_ sender: NSButton) {
         webView.goForward()
     }
-
+    
     func addMovableView() {
         movableView = WindowMovableView(frame: .zero)
         movableView.frame = CGRect(x: 0, y: 0, width: webView.frame.width, height: 20)
@@ -176,8 +195,8 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
     
     func injectCustomCSS() {
         guard let cssURL = Bundle.main.url(forResource: "custom", withExtension: "css"),
-        let css = try? String(contentsOf: cssURL) else {
-            return
+            let css = try? String(contentsOf: cssURL) else {
+                return
         }
         
         var js = "var style = document.createElement('style'); style.innerHTML = '\(css)'; document.head.appendChild(style);"
@@ -196,8 +215,8 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
     /// These are used to detect when a track is playing etc.
     func injectObservers() {
         guard let jsURL = Bundle.main.url(forResource: "observer", withExtension: "js"),
-        let js = try? String(contentsOf: jsURL) else {
-            return
+            let js = try? String(contentsOf: jsURL) else {
+                return
         }
         
         webView.evaluateJavaScript(js) { (_, error) in
@@ -206,5 +225,5 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
             }
         }
     }
-
+    
 }
