@@ -14,6 +14,7 @@ class ViewController: NSViewController {
 
     var webView: CustomWebView!
     var userContentController: WKUserContentController!
+    var standardButtonsView: NSView!
     var movableView: WindowMovableView!
     var mediaKeyTap: MediaKeyTap?
     var backButton: NSButton!
@@ -51,6 +52,7 @@ class ViewController: NSViewController {
         webView.navigationDelegate = self
         webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15"
         
+        addStandardButtonsView()
         addMovableView()
         addNavigationButtons()
         
@@ -60,31 +62,25 @@ class ViewController: NSViewController {
     override func viewDidLayout() {
         
         super.viewDidLayout()
-
-        var y = webView.isFlipped ? 22 : webView.frame.height - 39
         
         if let btn = view.window?.standardWindowButton(.closeButton) {
             btn.removeFromSuperview()
-            btn.setFrameOrigin(NSPoint(x: 17, y: y))
-            view.addSubview(btn)
-        }
-        
-        if let btn = view.window?.standardWindowButton(.miniaturizeButton) {
-            btn.removeFromSuperview()
-            btn.setFrameOrigin(NSPoint(x: 37, y: y))
-            view.addSubview(btn)
-        }
-        
-        if let btn = view.window?.standardWindowButton(.zoomButton) {
-            btn.removeFromSuperview()
-            btn.setFrameOrigin(NSPoint(x: 57, y: y))
-            view.addSubview(btn)
+            standardButtonsView.addSubview(btn)
         }
 
+        if let btn = view.window?.standardWindowButton(.miniaturizeButton) {
+            btn.removeFromSuperview()
+            standardButtonsView.addSubview(btn)
+        }
+
+        if let btn = view.window?.standardWindowButton(.zoomButton) {
+            btn.removeFromSuperview()
+            standardButtonsView.addSubview(btn)
+        }
         
         movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 20, width: webView.frame.width, height: 20)
         
-        y = webView.isFlipped ? 14 : webView.frame.height - 46
+        let y = webView.isFlipped ? 14 : webView.frame.height - 46
         
         var frame = backButton.frame
         frame.origin = CGPoint(x: 90, y: y)
@@ -146,6 +142,12 @@ class ViewController: NSViewController {
         webView.goForward()
     }
 
+    func addStandardButtonsView() {
+        standardButtonsView = NSView(frame: .zero)
+        standardButtonsView.frame = CGRect(x: 14, y: 0, width: 80, height: 40)
+        webView.addSubview(standardButtonsView)
+    }
+    
     func addMovableView() {
         movableView = WindowMovableView(frame: .zero)
         movableView.frame = CGRect(x: 0, y: 0, width: webView.frame.width, height: 20)
