@@ -63,25 +63,6 @@ class ViewController: NSViewController {
 
         var y = webView.isFlipped ? 22 : webView.frame.height - 39
         
-        if let btn = view.window?.standardWindowButton(.closeButton) {
-            btn.removeFromSuperview()
-            btn.setFrameOrigin(NSPoint(x: 17, y: y))
-            view.addSubview(btn)
-        }
-        
-        if let btn = view.window?.standardWindowButton(.miniaturizeButton) {
-            btn.removeFromSuperview()
-            btn.setFrameOrigin(NSPoint(x: 37, y: y))
-            view.addSubview(btn)
-        }
-        
-        if let btn = view.window?.standardWindowButton(.zoomButton) {
-            btn.removeFromSuperview()
-            btn.setFrameOrigin(NSPoint(x: 57, y: y))
-            view.addSubview(btn)
-        }
-
-        
         movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 20, width: webView.frame.width, height: 20)
         
         y = webView.isFlipped ? 14 : webView.frame.height - 46
