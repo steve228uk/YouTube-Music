@@ -1,16 +1,16 @@
 PODS:
-  - MediaKeyTap (2.1.0)
+  - MediaKeyTap (2.2.1)
 
 DEPENDENCIES:
   - MediaKeyTap
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - MediaKeyTap
 
 SPEC CHECKSUMS:
-  MediaKeyTap: 1849cb1882ebd1ece5fed6b3cec6565a5f30da00
+  MediaKeyTap: 737434cc2459e5fb9385f7e8974939ee833cd8ec
 
 PODFILE CHECKSUM: d93615dae66d91fd60309b738fa6ab727150f228
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.10.0.rc.1

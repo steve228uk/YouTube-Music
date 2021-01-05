@@ -17,6 +17,7 @@ extension ViewController: MediaKeyTapDelegate {
     func registerRemoteCommands() {
         mediaKeyTap = MediaKeyTap(delegate: self)
         mediaKeyTap?.start()
+        }
     }
     
     func handle(mediaKey: MediaKey, event: KeyEvent) {

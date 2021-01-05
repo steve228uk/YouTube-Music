@@ -50,7 +50,7 @@ class MediaKeyTapInternals {
     */
     func enableTap(_ onOff: Bool) {
         if let port = self.keyEventPort, let runLoop = self.runLoop {
-            CFRunLoopPerformBlock(runLoop, CFRunLoopMode.commonModes as CFTypeRef!) {
+            CFRunLoopPerformBlock(runLoop, CFRunLoopMode.commonModes as CFTypeRef) {
                 CGEvent.tapEnable(tap: port, enable: onOff)
             }
             CFRunLoopWakeUp(runLoop)
@@ -76,7 +76,9 @@ class MediaKeyTapInternals {
                 return event
             }
 
-            return self.handle(event: event, ofType: type)
+            return DispatchQueue.main.sync {
+                return self.handle(event: event, ofType: type)
+            }
         }
 
         try startKeyEventTap(callback: eventTapCallback, restart: restart)
@@ -96,9 +98,7 @@ class MediaKeyTapInternals {
                 && delegate?.isInterceptingMediaKeys() ?? false
             else { return event }
 
-            DispatchQueue.main.async {
-                self.delegate?.handle(keyEvent: nsEvent.keyEvent)
-            }
+            self.delegate?.handle(keyEvent: nsEvent.keyEvent)
 
             return nil
         }
