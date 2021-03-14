@@ -162,7 +162,7 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print(error)
-        print(navigation)
+        print(navigation as Any)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
