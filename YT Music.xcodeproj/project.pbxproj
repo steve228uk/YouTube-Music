@@ -16,8 +16,6 @@
 		286AD73F20D9061400B2F45F /* custom.css in Resources */ = {isa = PBXBuildFile; fileRef = 286AD73E20D9061400B2F45F /* custom.css */; };
 		286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74020D909AB00B2F45F /* CustomWebView.swift */; };
 		286AD74320D90E1B00B2F45F /* CustomWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74220D90E1B00B2F45F /* CustomWindow.swift */; };
-		28BB690E20EA56F100BD3AD6 /* DevMateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */; };
-		28BB691020EA576D00BD3AD6 /* DevMateKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		28DA92B620D90169004B2A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DA92B520D90169004B2A6D /* AppDelegate.swift */; };
 		28DA92B820D90169004B2A6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DA92B720D90169004B2A6D /* ViewController.swift */; };
 		28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92B920D9016A004B2A6D /* Assets.xcassets */; };
@@ -32,7 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				28BB691020EA576D00BD3AD6 /* DevMateKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,7 +46,6 @@
 		286AD74020D909AB00B2F45F /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
 		286AD74220D90E1B00B2F45F /* CustomWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWindow.swift; sourceTree = "<group>"; };
 		288C970E20D91A8B001672E1 /* YT Music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT Music.entitlements"; sourceTree = "<group>"; };
-		28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DevMateKit.framework; sourceTree = "<group>"; };
 		28BB691120EA57FB00BD3AD6 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		28DA92B220D90169004B2A6D /* YT Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YT Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28DA92B520D90169004B2A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +64,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2818F51420F54D27006CEBB4 /* MediaPlayer.framework in Frameworks */,
-				28BB690E20EA56F100BD3AD6 /* DevMateKit.framework in Frameworks */,
 				E124CBA662E3C5391F6A7C3A /* libPods-YT Music.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +123,6 @@
 		28DA92B420D90169004B2A6D /* YT Music */ = {
 			isa = PBXGroup;
 			children = (
-				28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */,
 				288C970E20D91A8B001672E1 /* YT Music.entitlements */,
 				2802617520EE6271001FDDCC /* Supporting Files */,
 				281F979A20E958C00033D930 /* Views */,
@@ -428,8 +422,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YT\\ Music",
-					"$(PROJECT_DIR)/YT\\ Music",
-					"$(PROJECT_DIR)/YT\\ Music/DevMateKit.framework/Frameworks",
 				);
 				INFOPLIST_FILE = "YT Music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,8 +449,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YT\\ Music",
-					"$(PROJECT_DIR)/YT\\ Music",
-					"$(PROJECT_DIR)/YT\\ Music/DevMateKit.framework/Frameworks",
 				);
 				INFOPLIST_FILE = "YT Music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
