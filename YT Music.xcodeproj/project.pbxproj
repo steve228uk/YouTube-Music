@@ -22,7 +22,7 @@
 		28DA92B820D90169004B2A6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DA92B720D90169004B2A6D /* ViewController.swift */; };
 		28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92B920D9016A004B2A6D /* Assets.xcassets */; };
 		28DA92BD20D9016A004B2A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92BB20D9016A004B2A6D /* Main.storyboard */; };
-		DC8A73953AF08F2621981F7F /* Pods_YT_Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1F2E78245D22CA0EB321BB /* Pods_YT_Music.framework */; };
+		E124CBA662E3C5391F6A7C3A /* libPods-YT Music.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B502697EC1DACD935D3BC240 /* libPods-YT Music.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,7 +58,7 @@
 		28DA92BC20D9016A004B2A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28DA92BE20D9016A004B2A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AED565561146EAC97AC8F55 /* Pods-YT Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YT Music.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YT Music/Pods-YT Music.debug.xcconfig"; sourceTree = "<group>"; };
-		6E1F2E78245D22CA0EB321BB /* Pods_YT_Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YT_Music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B502697EC1DACD935D3BC240 /* libPods-YT Music.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YT Music.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9D316F37D878F34D8107B0 /* Pods-YT Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YT Music.release.xcconfig"; path = "Pods/Target Support Files/Pods-YT Music/Pods-YT Music.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +69,7 @@
 			files = (
 				2818F51420F54D27006CEBB4 /* MediaPlayer.framework in Frameworks */,
 				28BB690E20EA56F100BD3AD6 /* DevMateKit.framework in Frameworks */,
-				DC8A73953AF08F2621981F7F /* Pods_YT_Music.framework in Frameworks */,
+				E124CBA662E3C5391F6A7C3A /* libPods-YT Music.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				2818F51320F54D27006CEBB4 /* MediaPlayer.framework */,
-				6E1F2E78245D22CA0EB321BB /* Pods_YT_Music.framework */,
+				B502697EC1DACD935D3BC240 /* libPods-YT Music.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
