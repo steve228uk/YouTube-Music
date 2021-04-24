@@ -6,6 +6,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+G'day everyone! Tim here! It took a fair few weeks of R&D (including [a PR to fastlane](https://github.com/fastlane/fastlane/pull/18496) itself!), but with Steve's blessing, I've finally managed to remove DevMateKit and replace it with an automated build system around GitHub Actions that will enable creating release updates of YT Music *far* more frequently than before.
+
+This is just a basic release incorporating all of the previous improvements, but now this system in place, hopefully we can start bringing new features and OS support to the app moving forward! Enjoy!
+
+### Added
+
+* A Github Actions automated release pipeline. [#126](https://github.com/steve228uk/YouTube-Music/pull/126)
+
+### Changes
+
+* Set `NSRequiresAquaSystemAppearance` to `false` to enable Dark Mode appearance [#102](https://github.com/steve228uk/YouTube-Music/pull/102)
+
+### Fixes
+
+* Music auto-plays when receiving call. [#58](https://github.com/steve228uk/YouTube-Music/pull/58)
+* Enabled media controller commands. [#81](https://github.com/steve228uk/YouTube-Music/pull/81)
+* Latest album art being pulled correctly for every new notification. [#84](https://github.com/steve228uk/YouTube-Music/pull/84)
+* Too many notifications appearing too often. [#85](https://github.com/steve228uk/YouTube-Music/pull/85)
+* App crashes when resizing the window. [#87](https://github.com/steve228uk/YouTube-Music/pull/87)
+
 ## [1.0.6] - 2018-07-11
 
 I've changed a few things in this release and it now targets 10.11 for those of you still rocking El Capitan (though you really should think about upgrading at some point 🤭).
@@ -20,7 +40,7 @@ I've also fixed a bug with the like and dislike shortcuts not always liking the 
 
 ### Feedback
 
-As always, please leave any feedback or issues on [Github](https://github.com/steve228uk/youtube-music) and you can also [follow me on Twitter](https://twitter.com/steve228uk).
+As always, please leave any feedback or issues on [GitHub](https://github.com/steve228uk/youtube-music) and you can also [follow me on Twitter](https://twitter.com/steve228uk).
 
 ## [1.0.5] - 2018-07-06
 
