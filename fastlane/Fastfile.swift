@@ -266,10 +266,18 @@ extension Fastfile {
         let signature = sh(command: "./Pods/Sparkle/bin/sign_update -s \(sparkleKey) \(fileName)",
                            log: false).trimmingCharacters(in: .whitespacesAndNewlines)
 
+        // Save the changes to disk so we can pass the file as one element to Ink
+        // (Otherwise we have to sanitize it against all of Bash's special characters)
+        let changesFilename = "_changes.md"
+        do {
+            let sanitizedChanges = changes ?? "No changes listed for this version."
+            try sanitizedChanges.write(toFile: changesFilename, atomically: true, encoding: .utf8)
+        } catch {
+            throw "Unable to save new changes from Changelog to disk"
+        }
+
         // Convert the changes from markdown to HTML using Ink
-        var sanitizedChanges = changes ?? "No changes listed for this version."
-        sanitizedChanges = sanitizedChanges.replacingOccurrences(of: "\"", with: "\\\"")
-        let htmlChanges = sh(command: "./Ink/.build/release/ink-cli -m \"\(sanitizedChanges)\"",
+        let htmlChanges = sh(command: "./Ink/.build/release/ink-cli \(changesFilename)",
                              log: false)
             .trimmingCharacters(in: .whitespacesAndNewlines)
 
