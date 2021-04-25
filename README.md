@@ -1,6 +1,10 @@
 # YT Music
 
-A simple Mac app wrapper using `WKWebView` for [YouTube Music](https://music.youtube.com) that allows YouTube Music to run as a standalone process. Supports:
+A simple Mac app wrapper using `WKWebView` for [YouTube Music](https://music.youtube.com) that allows YouTube Music to run as a standalone process. 
+
+![Screenshot 1](screenshots/screenshot-1.png)
+
+## Features
 
 - Media Keys
 - Keyboard shortcuts
@@ -22,10 +26,10 @@ If [homebrew](https://brew.sh) is installed, you can also use `brew install --ca
 
 ## Screenshots
 
-<details><summary>View Screenshots</summary>
+<details><summary>View More Screenshots</summary>
 <p>
 
-![Screenshot 1](screenshots/screenshot-1.png)
+
 ![Screenshot 2](screenshots/screenshot-2.png)
 ![Screenshot 3](screenshots/screenshot-3.png)
 ![Screenshot 4](screenshots/screenshot-4.png)
