@@ -6,8 +6,7 @@
             <title>Version 1.1.0</title>
             <description>
                 <![CDATA[
-                sh: NSRequiresAquaSystemAppearance: command not found
-<p>G'day everyone! Tim here! It took a fair few weeks of R&amp;D (including <a href="https://github.com/fastlane/fastlane/pull/18496">a PR to fastlane</a> itself!), but with Steve's blessing, I've finally managed to remove DevMateKit and replace it with an automated build system around GitHub Actions that will enable creating release updates of YT Music <em>far</em> more frequently than before.</p><p>This is just a basic release incorporating all of the previous improvements, but now this system in place, hopefully we can start bringing new features and OS support to the app moving forward! Enjoy!</p><h3>Added</h3><ul><li>A Github Actions automated release pipeline. <a href="https://github.com/steve228uk/YouTube-Music/pull/126">#126</a></li></ul><h3>Changes</h3><ul><li>Set to to enable Dark Mode appearance <a href="https://github.com/steve228uk/YouTube-Music/pull/102">#102</a></li></ul><h3>Fixes</h3><ul><li>Music auto-plays when receiving call. <a href="https://github.com/steve228uk/YouTube-Music/pull/58">#58</a></li><li>Enabled media controller commands. <a href="https://github.com/steve228uk/YouTube-Music/pull/81">#81</a></li><li>Latest album art being pulled correctly for every new notification. <a href="https://github.com/steve228uk/YouTube-Music/pull/84">#84</a></li><li>Too many notifications appearing too often. <a href="https://github.com/steve228uk/YouTube-Music/pull/85">#85</a></li><li>App crashes when resizing the window. <a href="https://github.com/steve228uk/YouTube-Music/pull/87">#87</a></li></ul>
+                <p>G'day everyone! Tim here! It took a fair few weeks of R&amp;D (including <a href="https://github.com/fastlane/fastlane/pull/18496">a PR to fastlane</a> itself!), but with Steve's blessing, I've finally managed to remove DevMateKit and replace it with an automated build system around GitHub Actions that will enable creating release updates of YT Music <em>far</em> more frequently than before.</p><p>This is just a basic release incorporating all of the previous improvements, but now this system in place, hopefully we can start bringing new features and OS support to the app moving forward! Enjoy!</p><h3>Added</h3><ul><li>A Github Actions automated release pipeline. <a href="https://github.com/steve228uk/YouTube-Music/pull/126">#126</a></li></ul><h3>Changes</h3><ul><li>Set <code>NSRequiresAquaSystemAppearance</code> to <code>false</code> to enable Dark Mode appearance <a href="https://github.com/steve228uk/YouTube-Music/pull/102">#102</a></li></ul><h3>Fixes</h3><ul><li>Music auto-plays when receiving call. <a href="https://github.com/steve228uk/YouTube-Music/pull/58">#58</a></li><li>Enabled media controller commands. <a href="https://github.com/steve228uk/YouTube-Music/pull/81">#81</a></li><li>Latest album art being pulled correctly for every new notification. <a href="https://github.com/steve228uk/YouTube-Music/pull/84">#84</a></li><li>Too many notifications appearing too often. <a href="https://github.com/steve228uk/YouTube-Music/pull/85">#85</a></li><li>App crashes when resizing the window. <a href="https://github.com/steve228uk/YouTube-Music/pull/87">#87</a></li></ul>
                 ]]>
             </description>
             <pubDate>Sat, 24 Apr 2021 16:13:10 +0000</pubDate>
@@ -16,8 +15,6 @@
             sparkle:version="9" sparkle:shortVersionString="1.1.0"
             sparkle:edSignature="+iHOBGvyva+Khkv2nsN9antCRb9MVRUpcbLBTAcjgy4D8xwLLZaCRMWROnTBiIlSWEpcwux45yUDT22lcl9pDA==" length="5657616"
             type="application/octet-stream"/>
-        </item>
-        <item>
         </item>
     </channel>
 </rss>
