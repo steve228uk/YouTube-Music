@@ -6,6 +6,11 @@
             <title>Version 1.1.1</title>
             <description>
                 <![CDATA[
+                <style>
+                    body { font-family: -apple-system, sans-serif; font-size: 0.9em; line-height: 150%; padding: 10px 20px; }
+                    h3 { font-size: 1.5em; margin-bottom: 0; font-weight: 700; }
+                    li { margin-bottom: 0.5em; }
+                </style>
                 <h3>Fixes</h3><ul><li>Media control keys not responding on newer versions of macOS. <a href="https://github.com/steve228uk/YouTube-Music/pull/57">#57</a></li><li>Content not appearing in macOS Big Sur. <a href="https://github.com/steve228uk/YouTube-Music/pull/130">#130</a></li></ul>
                 ]]>
             </description>
