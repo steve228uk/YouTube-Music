@@ -277,9 +277,18 @@ extension Fastfile {
         }
 
         // Convert the changes from markdown to HTML using Ink
-        let htmlChanges = sh(command: "./Ink/.build/release/ink-cli \(changesFilename)",
+        var htmlChanges = sh(command: "./Ink/.build/release/ink-cli \(changesFilename)",
                              log: false)
             .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        // Prepend a stylesheet to make the release notes look more consistent
+        htmlChanges = """
+        <style>
+            body { font-family: -apple-system, sans-serif; font-size: 0.9em; line-height: 150%; padding: 10px 20px; }
+            h3 { font-size: 1.5em; margin-bottom: 0; font-weight: 700; }
+            li { margin-bottom: 0.5em; }
+        </style>
+        """ + htmlChanges
 
         // Generate today's date in the appropriate format
         let dateFormatter = DateFormatter()
