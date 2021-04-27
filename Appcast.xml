@@ -3,6 +3,20 @@
     <channel>
         <title>YT Music</title>
         <item>
+            <title>Version 1.1.1</title>
+            <description>
+                <![CDATA[
+                <h3>Fixes</h3><ul><li>Media control keys not responding on newer versions of macOS. <a href="https://github.com/steve228uk/YouTube-Music/pull/57">#57</a></li><li>Content not appearing in macOS Big Sur. <a href="https://github.com/steve228uk/YouTube-Music/pull/130">#130</a></li></ul>
+                ]]>
+            </description>
+            <pubDate>Tue, 27 Apr 2021 13:42:20 +0000</pubDate>
+            <sparkle:minimumSystemVersion>10.11</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/steve228uk/YouTube-Music/releases/download/1.1.1/YT-Music-1.1.1.zip"
+            sparkle:version="10" sparkle:shortVersionString="1.1.1"
+            sparkle:edSignature="vONJF4UEzH+ZSCFC6E6tDhrLtzz4j0k4UTPKMM4sRedKybgyojpyGZtAu4G9n4KoegB/7JJ0NMqTjoeKtIyzBg==" length="5656986"
+            type="application/octet-stream"/>
+        </item>
+        <item>
             <title>Version 1.1.0</title>
             <description>
                 <![CDATA[
