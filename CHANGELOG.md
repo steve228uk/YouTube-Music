@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixes
+
+* Media control keys not responding on newer versions of macOS. [#57](https://github.com/steve228uk/YouTube-Music/pull/57)
+* Content not appearing in macOS Big Sur. [#130](https://github.com/steve228uk/YouTube-Music/pull/130)
+
 ## [1.1.0] - 2021-04-24
 
 G'day everyone! Tim here! It took a fair few weeks of R&D (including [a PR to fastlane](https://github.com/fastlane/fastlane/pull/18496) itself!), but with Steve's blessing, I've finally managed to remove DevMateKit and replace it with an automated build system around GitHub Actions that will enable creating release updates of YT Music *far* more frequently than before.
