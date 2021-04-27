@@ -14,22 +14,9 @@ import MediaPlayer
 #endif
 
 extension ViewController: MediaKeyTapDelegate {
-    
     func registerRemoteCommands() {
-        if #available(OSX 10.12.2, *) {
-            let commandCenter = MPRemoteCommandCenter.shared()
-            commandCenter.playCommand.addTarget(self, action: #selector(play))
-            commandCenter.pauseCommand.addTarget(self, action: #selector(pause))
-            commandCenter.togglePlayPauseCommand.addTarget(self, action: #selector(playPause))
-            commandCenter.nextTrackCommand.addTarget(self, action: #selector(nextTrack))
-            commandCenter.nextTrackCommand.isEnabled = true
-            commandCenter.previousTrackCommand.addTarget(self, action: #selector(previousTrack))
-            commandCenter.previousTrackCommand.isEnabled = true
-            commandCenter.changePlaybackPositionCommand.addTarget(self, action: #selector(seek(_:)))
-        } else {
-            mediaKeyTap = MediaKeyTap(delegate: self)
-            mediaKeyTap?.start()
-        }
+        mediaKeyTap = MediaKeyTap(delegate: self)
+        mediaKeyTap?.start()
     }
     
     func handle(mediaKey: MediaKey, event: KeyEvent) {
@@ -44,7 +31,7 @@ extension ViewController: MediaKeyTapDelegate {
         case .next, .fastForward:
             nextTrack()
             break
-        case.previous, .rewind:
+        case .previous, .rewind:
             previousTrack()
             break
         }
