@@ -1,8 +1,14 @@
-# YT Music
-
-A simple Mac app wrapper using `WKWebView` for [YouTube Music](https://music.youtube.com) that allows YouTube Music to run as a standalone process. 
+# YT Music - A Mac app wrapper for YouTube Music
 
 ![Screenshot 1](screenshots/screenshot-1.png)
+
+<span align="center">
+
+[![CI](https://github.com/steve228uk/YouTube-Music/actions/workflows/CI.yml/badge.svg)](https://github.com/steve228uk/YouTube-Music/actions/workflows/CI.yml) [![Latest Release](https://img.shields.io/github/v/release/steve228uk/YouTube-Music?color=yellow)](https://github.com/steve228uk/YouTube-Music/releases) [![macOS 10.11](https://img.shields.io/badge/platform-macOS%2010.11-blueviolet)](https://github.com/steve228uk/YouTube-Music/releases) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/steve228uk/YouTube-Music/master/LICENSE)
+
+</span>
+
+A simple Mac app wrapper using `WKWebView` for [YouTube Music](https://music.youtube.com) that allows YouTube Music to run as a standalone process. 
 
 ## Features
 
