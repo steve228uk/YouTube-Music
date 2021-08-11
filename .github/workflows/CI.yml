@@ -1,59 +1,32 @@
-# Builds and releases a new build of the YouTube Music app
+# Installs pod dependencies and then runs the unit test suite
+name: CI
 
-name: New Release
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
+# Trigger CI when pushing to master, or opening PRs to master
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version Tag'     
-        required: true
-        default: '0.0.0'
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
 
 jobs:
-  build:
-    # Set the name for this job to list the version number
-    name: 'Release Version ${{ github.event.inputs.version }}'
-    
-    # Run on the latest version of macOS supported
-    runs-on: macos-latest
-    
-    # Reference the environment where the secrets are stored
-    environment: Release
+  test:
+    name: 'Run Unit Tests'
+
+    # Run on latest supported macOS version
+    runs-on: macOS-latest
 
     steps:
-      # Check out the repo with our CI bot's credentials
-      - name: Check out Repository
-        uses: actions/checkout@v2
-      
-      # Configure git credentials to be GitHub Actions bot
-      - name: Configure git credentials
-        uses: fregante/setup-git-user@v1
 
-      # Execute fastlane release lane
-      - name: Build and Publish Release
-        run: bundle install && bundle exec fastlane swift init && bundle exec fastlane release
-        id: build-step
-        env:
-          NEW_VERSION: ${{ github.event.inputs.version }}
-          INFO_PLIST_PATH: 'YT Music/Info.plist'
-          BINARY_FILE_NAME: 'YT Music'
-          AC_NOTARIZE_EMAIL: ${{ secrets.AC_NOTARIZE_EMAIL }}
-          AC_NOTARIZE_TEAM: ${{ secrets.AC_NOTARIZE_TEAM }}
-          CODESIGN_IDENTITY: ${{ secrets.CODESIGN_IDENTITY }}
-          SIGNING_CERT: ${{ secrets.SIGNING_CERT }}
-          SIGNING_CERT_PASSWORD: ${{ secrets.SIGNING_CERT_PASSWORD }}
-          SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
-          MATCH_KEYCHAIN_PASSWORD: ${{ secrets.MATCH_KEYCHAIN_PASSWORD }}
-          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
-          FL_GITHUB_RELEASE_API_BEARER: ${{ secrets.GITHUB_TOKEN }}
-          
-      # Calculate and print a checksum of the final build artifact
-      - name: Print SHA-256 Checksum of Release
-        run: |
-              :
-              echo -e "\033[32;1mThe SHA-256 hash for ${{ env.artifact_name }} is ${{ env.artifact_hash }}.\033[0m"
-             
-             
+    # Check-out the repo
+    - name: Check out Repository
+      uses: actions/checkout@v2
+
+    # Install the bundle dependencies
+    - name: Install dependencies
+      run: bundle install && bundle exec pod install
+
+    # Run the unit tests via xcodebuild
+    - name: Run Xcode Unit Tests
+      run: xcodebuild -workspace YT\ Music.xcworkspace -scheme YTMusicTests test

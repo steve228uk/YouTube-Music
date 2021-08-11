@@ -82,13 +82,13 @@ class Fastfile: LaneFile {
         let newBuildNumber = incrementBuildNumber()
 
         // Build the app (All of the build settings are in the project)
-        buildMacApp(codesigningIdentity: environmentVariable(get: "CODESIGN_IDENTITY"),
+        buildMacApp(codesigningIdentity: .userDefined(environmentVariable(get: "CODESIGN_IDENTITY")),
                     exportMethod: "developer-id")
 
         // Notarize and staple the app
         notarize(package: "\(binaryFileName).app",
-                 username: environmentVariable(get: "AC_NOTARIZE_EMAIL"),
-                 ascProvider: environmentVariable(get: "AC_NOTARIZE_TEAM"),
+                 username: .userDefined(environmentVariable(get: "AC_NOTARIZE_EMAIL")),
+                 ascProvider: .userDefined(environmentVariable(get: "AC_NOTARIZE_TEAM")),
                  verbose: true)
 
         // Set up a formatted file name for the app name, and an escaped variant
@@ -118,7 +118,7 @@ class Fastfile: LaneFile {
                   message: "Release version \(newVersion)! 🎉")
 
         // Make a tag for this release
-        addGitTag(tag: newVersion)
+        addGitTag(tag: .userDefined(newVersion))
 
         // Push to remote
         pushToGitRemote()
@@ -126,9 +126,9 @@ class Fastfile: LaneFile {
         // Push GitHub Release
         setGithubRelease(repositoryName: repositoryName,
                          tagName: newVersion,
-                         name: newVersion,
-                         description: formattedReleaseChanges(changelogChanges.changes),
-                         uploadAssets: [archiveName])
+                         name: .userDefined(newVersion),
+                         description: .userDefined(formattedReleaseChanges(changelogChanges.changes)),
+                         uploadAssets: .userDefined([archiveName]))
 
         // Generate a SHA-256 hash of the artifact and also expose that
         let shaHash = sh(command: "shasum -a 256 \(archiveName) | awk '{ print $1 }'",
@@ -138,6 +138,23 @@ class Fastfile: LaneFile {
         sh(command: "echo \"artifact_name=\(archiveName)\" >> $GITHUB_ENV", log: false)
         sh(command: "echo \"artifact_hash=\(shaHash)\" >> $GITHUB_ENV", log: false)
 	}
+
+    /// Runs a lane to performs a basic build of the app and then runs all of the unit tests
+    func testLane() {
+        desc("Build a signed copy of this app, and then run its unit tests")
+
+        // Install any needed CocoaPods dependencies
+        cocoapods(cleanInstall: true, useBundleExec: true)
+
+        // Make a temporary keychain to store our signing credentials
+        setUpKeychain()
+
+        // Install the Apple signing identity from GitHub secrets
+        installSigningIdentity()
+
+        // Run the unit tests
+        runTests()
+    }
 }
 
 extension Fastfile {
@@ -172,11 +189,11 @@ extension Fastfile {
             .homeDirectoryForCurrentUser
             .appendingPathComponent("Library/Keychains/\(keychainName)-db")
         if FileManager.default.fileExists(atPath: keychainURL.path) {
-            deleteKeychain(name: keychainName)
+            deleteKeychain(name: .userDefined(keychainName))
         }
 
         // Create the new keychain
-        createKeychain(name: keychainName,
+        createKeychain(name: .userDefined(keychainName),
                        password: environmentVariable(get: "MATCH_KEYCHAIN_PASSWORD"),
                        defaultKeychain: true,
                        unlock: true,
@@ -201,9 +218,9 @@ extension Fastfile {
 
         // Import into the keychain
         importCertificate(certificatePath: "Certificate.p12",
-                          certificatePassword: environmentVariable(get: "SIGNING_CERT_PASSWORD"),
+                          certificatePassword: .userDefined(environmentVariable(get: "SIGNING_CERT_PASSWORD")),
                           keychainName: "\(keychainName)-db",
-                          keychainPassword: environmentVariable(get: "MATCH_KEYCHAIN_PASSWORD"))
+                          keychainPassword: .userDefined(environmentVariable(get: "MATCH_KEYCHAIN_PASSWORD")))
     }
 
     /// In order to convert Markdown to HTML, download and build a copy
