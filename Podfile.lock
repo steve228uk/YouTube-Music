@@ -1,20 +1,28 @@
 PODS:
+  - Magnet (3.3.0):
+    - Sauce (~> 2.2.0)
   - MediaKeyTap (2.2.1)
+  - Sauce (2.2.0)
   - Sparkle (1.26.0)
 
 DEPENDENCIES:
+  - Magnet
   - MediaKeyTap
   - Sparkle
 
 SPEC REPOS:
   trunk:
+    - Magnet
     - MediaKeyTap
+    - Sauce
     - Sparkle
 
 SPEC CHECKSUMS:
+  Magnet: a44a5a14eecc77433cbaad1431b78f7d20725bf2
   MediaKeyTap: 737434cc2459e5fb9385f7e8974939ee833cd8ec
+  Sauce: 3ade51738563f86b08888cf4b91ae5943012088b
   Sparkle: d56d028f4b0c123577825f5d1004f6140d77f90e
 
-PODFILE CHECKSUM: 1f0420489f3131f18655429c3a9540b737f3f37b
+PODFILE CHECKSUM: 43e55b93a658411e9a91a8183af76df2b4929ce0
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.2
