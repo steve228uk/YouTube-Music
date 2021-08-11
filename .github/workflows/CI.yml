@@ -15,7 +15,7 @@ jobs:
     name: 'Run Unit Tests'
 
     # Run on latest supported macOS version
-    runs-on: macOS-latest
+    runs-on: macOS-11
 
     steps:
 
