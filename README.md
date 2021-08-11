@@ -1,5 +1,3 @@
-# YT Music - A Mac app wrapper for YouTube Music
-
 ![Screenshot 1](screenshots/screenshot-1.png)
 
 <span align="center">
