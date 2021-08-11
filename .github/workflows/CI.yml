@@ -2,12 +2,13 @@
 name: CI
 
 # Trigger CI when pushing to master, or opening PRs to master
-push:
+on:
+  push:
     branches:
-      - master
+    - master
   pull_request:
     branches:
-      - master
+    - master
 
 jobs:
   test:
