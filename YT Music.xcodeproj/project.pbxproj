@@ -50,6 +50,7 @@
 		224D278B26C37AB700B3ADC4 /* YTMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		224D278D26C37AB700B3ADC4 /* YTMusicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTMusicTests.swift; sourceTree = "<group>"; };
 		224D278F26C37AB700B3ADC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		224D279526C4047400B3ADC4 /* YT-Music-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT-Music-Debug.entitlements"; sourceTree = "<group>"; };
 		2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + MediaKeys.swift"; sourceTree = "<group>"; };
 		2802617820EE71C6001FDDCC /* observer.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = observer.js; sourceTree = "<group>"; };
 		2802617A20EE802B001FDDCC /* MediaCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCenter.swift; sourceTree = "<group>"; };
@@ -59,7 +60,7 @@
 		286AD73E20D9061400B2F45F /* custom.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = custom.css; sourceTree = "<group>"; };
 		286AD74020D909AB00B2F45F /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
 		286AD74220D90E1B00B2F45F /* CustomWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWindow.swift; sourceTree = "<group>"; };
-		288C970E20D91A8B001672E1 /* YT Music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT Music.entitlements"; sourceTree = "<group>"; };
+		288C970E20D91A8B001672E1 /* YT-Music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT-Music.entitlements"; sourceTree = "<group>"; };
 		28DA92B220D90169004B2A6D /* YT Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YT Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28DA92B520D90169004B2A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28DA92B720D90169004B2A6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +114,8 @@
 		2802617520EE6271001FDDCC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				224D279526C4047400B3ADC4 /* YT-Music-Debug.entitlements */,
+				288C970E20D91A8B001672E1 /* YT-Music.entitlements */,
 				281CB55520F516100050D26D /* silence.mp3 */,
 				286AD73E20D9061400B2F45F /* custom.css */,
 				2802617820EE71C6001FDDCC /* observer.js */,
@@ -154,7 +157,6 @@
 		28DA92B420D90169004B2A6D /* YT Music */ = {
 			isa = PBXGroup;
 			children = (
-				288C970E20D91A8B001672E1 /* YT Music.entitlements */,
 				2802617520EE6271001FDDCC /* Supporting Files */,
 				281F979A20E958C00033D930 /* Views */,
 				2802617420EE6260001FDDCC /* Controllers */,
@@ -396,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = B598AEF9ZM;
@@ -418,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = B598AEF9ZM;
@@ -556,13 +560,13 @@
 			baseConfigurationReference = 5AED565561146EAC97AC8F55 /* Pods-YT Music.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "YT Music/YT Music.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "YT Music/YT-Music-Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = B598AEF9ZM;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YT\\ Music",
@@ -585,7 +589,7 @@
 			baseConfigurationReference = DF9D316F37D878F34D8107B0 /* Pods-YT Music.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "YT Music/YT Music.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "YT-Music/YT Music.entitlements";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
