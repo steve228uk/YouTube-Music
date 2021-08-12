@@ -22,6 +22,11 @@
 		28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92B920D9016A004B2A6D /* Assets.xcassets */; };
 		28DA92BD20D9016A004B2A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92BB20D9016A004B2A6D /* Main.storyboard */; };
 		DD1C43A82A08CC98952A483A /* libPods-YT Music.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 396B6C8C07FADD7D45E2CCC6 /* libPods-YT Music.a */; };
+		DFEE18842697A8D1000913BC /* (null) in Sources */ = {isa = PBXBuildFile; };
+		DFEE188F269B1E18000913BC /* fa.otf in Resources */ = {isa = PBXBuildFile; fileRef = DFEE188E269B1E18000913BC /* fa.otf */; };
+		DFEE18A3269B47E7000913BC /* SupportNSTouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE18A2269B47E7000913BC /* SupportNSTouchBar.swift */; };
+		DFEE18A5269B4B49000913BC /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEE18A4269B4B49000913BC /* DFRFoundation.framework */; };
+		DFFF993426C58DFE00B14C8D /* TouchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF993326C58DFE00B14C8D /* TouchBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,12 @@
 		396B6C8C07FADD7D45E2CCC6 /* libPods-YT Music.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YT Music.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AED565561146EAC97AC8F55 /* Pods-YT Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YT Music.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YT Music/Pods-YT Music.debug.xcconfig"; sourceTree = "<group>"; };
 		DF9D316F37D878F34D8107B0 /* Pods-YT Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YT Music.release.xcconfig"; path = "Pods/Target Support Files/Pods-YT Music/Pods-YT Music.release.xcconfig"; sourceTree = "<group>"; };
+		DFEE188A2697B56B000913BC /* TouchBarPrivateApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateApi.h; sourceTree = "<group>"; };
+		DFEE188B2697B671000913BC /* TouchBarPrivateApi-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchBarPrivateApi-Bridging.h"; sourceTree = "<group>"; };
+		DFEE188E269B1E18000913BC /* fa.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fa.otf; sourceTree = "<group>"; };
+		DFEE18A2269B47E7000913BC /* SupportNSTouchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportNSTouchBar.swift; sourceTree = "<group>"; };
+		DFEE18A4269B4B49000913BC /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
+		DFFF993326C58DFE00B14C8D /* TouchBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFEE18A5269B4B49000913BC /* DFRFoundation.framework in Frameworks */,
 				2818F51420F54D27006CEBB4 /* MediaPlayer.framework in Frameworks */,
 				DD1C43A82A08CC98952A483A /* libPods-YT Music.a in Frameworks */,
 			);
@@ -104,6 +116,8 @@
 		2802617420EE6260001FDDCC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DFFF993326C58DFE00B14C8D /* TouchBarController.swift */,
+				DFEE18A2269B47E7000913BC /* SupportNSTouchBar.swift */,
 				28DA92B720D90169004B2A6D /* ViewController.swift */,
 				2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */,
 				2802617A20EE802B001FDDCC /* MediaCenter.swift */,
@@ -115,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				224D279526C4047400B3ADC4 /* YT-Music-Debug.entitlements */,
-				288C970E20D91A8B001672E1 /* YT-Music.entitlements */,
+				DFEE188E269B1E18000913BC /* fa.otf */,
 				281CB55520F516100050D26D /* silence.mp3 */,
 				286AD73E20D9061400B2F45F /* custom.css */,
 				2802617820EE71C6001FDDCC /* observer.js */,
@@ -157,6 +171,8 @@
 		28DA92B420D90169004B2A6D /* YT Music */ = {
 			isa = PBXGroup;
 			children = (
+				DFEE18872697B4EF000913BC /* CBridge */,
+				288C970E20D91A8B001672E1 /* YT-Music.entitlements */,
 				2802617520EE6271001FDDCC /* Supporting Files */,
 				281F979A20E958C00033D930 /* Views */,
 				2802617420EE6260001FDDCC /* Controllers */,
@@ -170,6 +186,7 @@
 		320842A7457275F8A861430A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFEE18A4269B4B49000913BC /* DFRFoundation.framework */,
 				2818F51320F54D27006CEBB4 /* MediaPlayer.framework */,
 				396B6C8C07FADD7D45E2CCC6 /* libPods-YT Music.a */,
 			);
@@ -183,6 +200,15 @@
 				DF9D316F37D878F34D8107B0 /* Pods-YT Music.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DFEE18872697B4EF000913BC /* CBridge */ = {
+			isa = PBXGroup;
+			children = (
+				DFEE188A2697B56B000913BC /* TouchBarPrivateApi.h */,
+				DFEE188B2697B671000913BC /* TouchBarPrivateApi-Bridging.h */,
+			);
+			path = CBridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +313,7 @@
 				286AD73F20D9061400B2F45F /* custom.css in Resources */,
 				28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */,
 				2802617920EE71C6001FDDCC /* observer.js in Resources */,
+				DFEE188F269B1E18000913BC /* fa.otf in Resources */,
 				28DA92BD20D9016A004B2A6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,12 +390,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2802617720EE629A001FDDCC /* ViewController + MediaKeys.swift in Sources */,
+				DFEE18A3269B47E7000913BC /* SupportNSTouchBar.swift in Sources */,
 				286AD74320D90E1B00B2F45F /* CustomWindow.swift in Sources */,
 				281F979920E9588A0033D930 /* WindowMovableView.swift in Sources */,
 				2802617B20EE802B001FDDCC /* MediaCenter.swift in Sources */,
 				28DA92B820D90169004B2A6D /* ViewController.swift in Sources */,
 				28DA92B620D90169004B2A6D /* AppDelegate.swift in Sources */,
 				286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */,
+				DFEE18842697A8D1000913BC /* (null) in Sources */,
+				DFFF993426C58DFE00B14C8D /* TouchBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,16 +600,19 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YT\\ Music",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "YT Music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.wearecocoon.YT-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "YT Music/CBridge/TouchBarPrivateApi-Bridging.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -599,16 +632,18 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YT\\ Music",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "YT Music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.wearecocoon.YT-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "YT Music/CBridge/TouchBarPrivateApi-Bridging.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

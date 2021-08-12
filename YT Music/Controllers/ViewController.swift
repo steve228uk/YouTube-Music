@@ -154,6 +154,13 @@ class ViewController: NSViewController {
         webView.addSubview(movableView)
     }
     
+    // MARK: - NSTouchBarProvider
+    
+    @available(macOS 10.12.2, *)
+    override func makeTouchBar() -> NSTouchBar? {
+        return TouchBarController.shared.makeTouchBar()
+    }
+    
 }
 
 // MARK: - Delegates
