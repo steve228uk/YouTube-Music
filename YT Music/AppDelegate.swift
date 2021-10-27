@@ -35,6 +35,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainWindowController?.window?.isExcludedFromWindowsMenu = true
         mainWindowController?.showWindow(self)
         mainWindowController?.window?.makeKeyAndOrderFront(self)
+        NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
+        TouchBarController.shared.setupControlStripPresence()
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
