@@ -1,4 +1,4 @@
-platform :osx, '10.11'
+platform :osx, '10.12.2'
 
 target 'YT Music' do
   pod 'MediaKeyTap'

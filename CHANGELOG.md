@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2021-10-27
+
+### Added
+
+* Apple Silicon support. [#149](https://github.com/steve228uk/YouTube-Music/pull/149)
+* Deeply integrated support for Touch Bar on MacBook Pro. [#146](https://github.com/steve228uk/YouTube-Music/pull/146)
+* Alternative global shortcut keys for controlling music playback. [#140](https://github.com/steve228uk/YouTube-Music/pull/140)
+
 ## [1.1.1] - 2021-04-27
 
 ### Fixes
