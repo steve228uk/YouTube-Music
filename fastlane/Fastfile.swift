@@ -82,7 +82,8 @@ class Fastfile: LaneFile {
         let newBuildNumber = incrementBuildNumber()
 
         // Build the app (All of the build settings are in the project)
-        buildMacApp(codesigningIdentity: .userDefined(environmentVariable(get: "CODESIGN_IDENTITY")),
+        buildMacApp(scheme: .userDefined("YT Music"),
+                    codesigningIdentity: .userDefined(environmentVariable(get: "CODESIGN_IDENTITY")),
                     exportMethod: "developer-id")
 
         // Notarize and staple the app
