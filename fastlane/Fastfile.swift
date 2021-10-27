@@ -153,7 +153,7 @@ class Fastfile: LaneFile {
         installSigningIdentity()
 
         // Run the unit tests
-        runTests()
+        runTests(scheme: "YTMusicTests")
     }
 }
 
