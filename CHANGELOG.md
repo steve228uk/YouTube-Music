@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2021-10-27
+
 ### Added
 
 * Apple Silicon support. [#149](https://github.com/steve228uk/YouTube-Music/pull/149)
@@ -98,7 +100,8 @@ I hope the changes are well received and any feedback or bugs can be reported on
 
 * Initial version of YT Music wrapper
 
-[Unreleased]: https://github.com/steve228uk/YouTube-Music/compare/1.1.1...HEAD
+[Unreleased]: https://github.com/steve228uk/YouTube-Music/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/steve228uk/YouTube-Music/compare/1.1.1...1.2.0
 [1.1.1]: https://github.com/steve228uk/YouTube-Music/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/steve228uk/YouTube-Music/compare/1.0.6...1.1.0
 [1.0.6]: https://github.com/steve228uk/YouTube-Music/compare/1.0.5...1.0.6

@@ -3,6 +3,24 @@
     <channel>
         <title>YT Music</title>
         <item>
+            <title>Version 1.2.0</title>
+            <description>
+                <![CDATA[
+                <style>
+    body { font-family: -apple-system, sans-serif; font-size: 0.9em; line-height: 150%; }
+    h3 { font-size: 1.5em; margin-bottom: 0; font-weight: 700; }
+    li { margin-bottom: 0.5em; }
+</style><h3>Added</h3><ul><li>Apple Silicon support. <a href="https://github.com/steve228uk/YouTube-Music/pull/149">#149</a></li><li>Deeply integrated support for Touch Bar on MacBook Pro. <a href="https://github.com/steve228uk/YouTube-Music/pull/146">#146</a></li><li>Alternative global shortcut keys for controlling music playback. <a href="https://github.com/steve228uk/YouTube-Music/pull/140">#140</a></li></ul>
+                ]]>
+            </description>
+            <pubDate>Wed, 27 Oct 2021 15:49:47 +0000</pubDate>
+            <sparkle:minimumSystemVersion>10.12.2</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/steve228uk/YouTube-Music/releases/download/1.2.0/YT-Music-1.2.0.zip"
+            sparkle:version="11" sparkle:shortVersionString="1.2.0"
+            sparkle:edSignature="Fc8GvL8IXWhknBtsRIQyieGbXgTlSUI6cWBdX0gTK9ci3alfq9foeftUIEEZ//Xf8AZiZ0ITIvESZyscubYLAQ==" length="5812009"
+            type="application/octet-stream"/>
+        </item>
+        <item>
             <title>Version 1.1.1</title>
             <description>
                 <![CDATA[
