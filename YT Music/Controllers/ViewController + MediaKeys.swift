@@ -40,8 +40,8 @@ extension ViewController: MediaKeyTapDelegate {
             hotKey.register()
         }
         
-        if let keyCombo = KeyCombo(key: .f, cocoaModifiers: [.command]) {
-            let hotKey = HotKey(identifier: "CommandF", keyCombo: keyCombo) { hotKey in
+        if let keyCombo = KeyCombo(key: .f, cocoaModifiers: [.command, .shift]) {
+            let hotKey = HotKey(identifier: "CommandShiftF", keyCombo: keyCombo) { hotKey in
                 self.startSearch();
             }
             hotKey.register()
