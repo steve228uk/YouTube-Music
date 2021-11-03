@@ -39,6 +39,13 @@ extension ViewController: MediaKeyTapDelegate {
             }
             hotKey.register()
         }
+        
+        if let keyCombo = KeyCombo(key: .f, cocoaModifiers: [.command]) {
+            let hotKey = HotKey(identifier: "CommandF", keyCombo: keyCombo) { hotKey in
+                self.startSearch();
+            }
+            hotKey.register()
+        }
     }
     
     func handle(mediaKey: MediaKey, event: KeyEvent) {
@@ -97,6 +104,15 @@ extension ViewController: MediaKeyTapDelegate {
     
     @objc func repeatTracks() {
         clickElement(selector: ".repeat")
+    }
+    
+    @objc func startSearch() {
+        let js = "var elem = document.getElementsByTagName('ytmusic-search-box')[0]; elem.setAttribute('opened', '');"
+        webView.evaluateJavaScript(js) { (_, error) in
+            if let error = error {
+                print(error)
+            }
+        }
     }
     
     func clickElement(selector: String) {
