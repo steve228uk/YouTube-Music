@@ -90,5 +90,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .performSelector(onMainThread: #selector(ViewController.shuffleTracks), with: nil, waitUntilDone: true)
     }
     
+    @IBAction func startSearch(_ sender: Any) {
+        mainWindowController?.window?.contentViewController?
+            .performSelector(onMainThread: #selector(ViewController.startSearch), with: nil, waitUntilDone: true)
+    }
 }
 
