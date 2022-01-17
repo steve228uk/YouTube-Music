@@ -99,6 +99,15 @@ extension ViewController: MediaKeyTapDelegate {
         clickElement(selector: ".repeat")
     }
     
+    @objc func startSearch() {
+        let js = "var elem = document.getElementsByTagName('ytmusic-search-box')[0]; elem.setAttribute('opened', '');"
+        webView.evaluateJavaScript(js) { (_, error) in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
+    
     func clickElement(selector: String) {
         let js = "document.querySelector('\(selector)').click();";
         webView.evaluateJavaScript(js) { (_, error) in

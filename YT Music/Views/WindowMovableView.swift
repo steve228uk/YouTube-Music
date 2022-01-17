@@ -10,6 +10,8 @@ import Cocoa
 
 class WindowMovableView: NSView {
     
+    weak var parent: NSView?
+    
     override var mouseDownCanMoveWindow: Bool {
         return true
     }
@@ -27,8 +29,19 @@ class WindowMovableView: NSView {
     }
     
     override func mouseUp(with event: NSEvent) {
-        guard event.clickCount == 2, let window = window else { return }
-        window.setIsZoomed(!window.isZoomed)
+        
+        guard let window = window else {
+            return
+        }
+        
+        switch event.clickCount {
+        case 1:
+            parent?.mouseUp(with: event)
+        case 2:
+            window.setIsZoomed(!window.isZoomed)
+        default:
+            break
+        }
     }
     
 }
