@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+* A new application icon matching the new design language of macOS Big Sur. [#160](https://github.com/steve228uk/YouTube-Music/pull/160)
+* A new keyboard shortcut for search (Command + F) to allow faster access to the search bar. [#151](https://github.com/steve228uk/YouTube-Music/pull/151)
+
+### Fixes
+
+* Removed the `keyDown` keyboard commaned to allow proper traversal of search results. [#151](https://github.com/steve228uk/YouTube-Music/pull/151)
+* Increased navigation bar height to 64 to allow proper mouse-click passthrough. [#151](https://github.com/steve228uk/YouTube-Music/pull/151)
+
 ## [1.2.0] - 2021-10-27
 
 ### Added
