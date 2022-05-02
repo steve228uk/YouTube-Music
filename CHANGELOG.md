@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+* A regression where increasing the height of the draggable toolbar was interfering with HTML elements in the page. [#162](https://github.com/steve228uk/YouTube-Music/pull/162)
+
 ## [1.3.0] - 2022-04-12
 
 ### Added
