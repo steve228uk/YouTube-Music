@@ -3,6 +3,24 @@
     <channel>
         <title>YT Music</title>
         <item>
+            <title>Version 1.3.1</title>
+            <description>
+                <![CDATA[
+                <style>
+    body { font-family: -apple-system, sans-serif; font-size: 0.9em; line-height: 150%; }
+    h3 { font-size: 1.5em; margin-bottom: 0; font-weight: 700; }
+    li { margin-bottom: 0.5em; }
+</style><h3>Fixed</h3><ul><li>A regression where increasing the height of the draggable toolbar was interfering with HTML elements in the page. <a href="https://github.com/steve228uk/YouTube-Music/pull/162">#162</a></li></ul>
+                ]]>
+            </description>
+            <pubDate>Mon, 2 May 2022 02:45:25 +0000</pubDate>
+            <sparkle:minimumSystemVersion>10.12.2</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/steve228uk/YouTube-Music/releases/download/1.3.1/YT-Music-1.3.1.zip"
+            sparkle:version="13" sparkle:shortVersionString="1.3.1"
+            sparkle:edSignature="FkA7oFKVJQMn6OW5kd4N687CQi8iOb+e1j4DuXYhMW+3s3cS8bsmZUTqYhdIhmUtiFJjTSolSaK/q6Pd5Ea6Cg==" length="6015559"
+            type="application/octet-stream"/>
+        </item>
+        <item>
             <title>Version 1.3.0</title>
             <description>
                 <![CDATA[
