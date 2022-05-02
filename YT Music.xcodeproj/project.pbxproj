@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224D278E26C37AB700B3ADC4 /* YTMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224D278D26C37AB700B3ADC4 /* YTMusicTests.swift */; };
 		2802617720EE629A001FDDCC /* ViewController + MediaKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */; };
 		2802617920EE71C6001FDDCC /* observer.js in Resources */ = {isa = PBXBuildFile; fileRef = 2802617820EE71C6001FDDCC /* observer.js */; };
 		2802617B20EE802B001FDDCC /* MediaCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802617A20EE802B001FDDCC /* MediaCenter.swift */; };
@@ -16,14 +17,27 @@
 		286AD73F20D9061400B2F45F /* custom.css in Resources */ = {isa = PBXBuildFile; fileRef = 286AD73E20D9061400B2F45F /* custom.css */; };
 		286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74020D909AB00B2F45F /* CustomWebView.swift */; };
 		286AD74320D90E1B00B2F45F /* CustomWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AD74220D90E1B00B2F45F /* CustomWindow.swift */; };
-		28BB690E20EA56F100BD3AD6 /* DevMateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */; };
-		28BB691020EA576D00BD3AD6 /* DevMateKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		28DA92B620D90169004B2A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DA92B520D90169004B2A6D /* AppDelegate.swift */; };
 		28DA92B820D90169004B2A6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DA92B720D90169004B2A6D /* ViewController.swift */; };
 		28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92B920D9016A004B2A6D /* Assets.xcassets */; };
 		28DA92BD20D9016A004B2A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92BB20D9016A004B2A6D /* Main.storyboard */; };
-		DC8A73953AF08F2621981F7F /* Pods_YT_Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1F2E78245D22CA0EB321BB /* Pods_YT_Music.framework */; };
+		DD1C43A82A08CC98952A483A /* libPods-YT Music.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 396B6C8C07FADD7D45E2CCC6 /* libPods-YT Music.a */; };
+		DFEE18842697A8D1000913BC /* (null) in Sources */ = {isa = PBXBuildFile; };
+		DFEE188F269B1E18000913BC /* fa.otf in Resources */ = {isa = PBXBuildFile; fileRef = DFEE188E269B1E18000913BC /* fa.otf */; };
+		DFEE18A3269B47E7000913BC /* SupportNSTouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE18A2269B47E7000913BC /* SupportNSTouchBar.swift */; };
+		DFEE18A5269B4B49000913BC /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEE18A4269B4B49000913BC /* DFRFoundation.framework */; };
+		DFFF993426C58DFE00B14C8D /* TouchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF993326C58DFE00B14C8D /* TouchBarController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		224D279026C37AB700B3ADC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28DA92AA20D90169004B2A6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28DA92B120D90169004B2A6D;
+			remoteInfo = "YT Music";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		28BB690F20EA575600BD3AD6 /* CopyFiles */ = {
@@ -32,13 +46,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				28BB691020EA576D00BD3AD6 /* DevMateKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		224D278B26C37AB700B3ADC4 /* YTMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		224D278D26C37AB700B3ADC4 /* YTMusicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTMusicTests.swift; sourceTree = "<group>"; };
+		224D278F26C37AB700B3ADC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		224D279526C4047400B3ADC4 /* YT-Music-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT-Music-Debug.entitlements"; sourceTree = "<group>"; };
+		22E7102927299CA7009E9C00 /* YT-Music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT-Music.entitlements"; sourceTree = "<group>"; };
 		2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + MediaKeys.swift"; sourceTree = "<group>"; };
 		2802617820EE71C6001FDDCC /* observer.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = observer.js; sourceTree = "<group>"; };
 		2802617A20EE802B001FDDCC /* MediaCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCenter.swift; sourceTree = "<group>"; };
@@ -48,37 +66,58 @@
 		286AD73E20D9061400B2F45F /* custom.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = custom.css; sourceTree = "<group>"; };
 		286AD74020D909AB00B2F45F /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
 		286AD74220D90E1B00B2F45F /* CustomWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWindow.swift; sourceTree = "<group>"; };
-		288C970E20D91A8B001672E1 /* YT Music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT Music.entitlements"; sourceTree = "<group>"; };
-		28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DevMateKit.framework; sourceTree = "<group>"; };
-		28BB691120EA57FB00BD3AD6 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		28DA92B220D90169004B2A6D /* YT Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YT Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28DA92B520D90169004B2A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28DA92B720D90169004B2A6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		28DA92B920D9016A004B2A6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28DA92BC20D9016A004B2A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28DA92BE20D9016A004B2A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		396B6C8C07FADD7D45E2CCC6 /* libPods-YT Music.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YT Music.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AED565561146EAC97AC8F55 /* Pods-YT Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YT Music.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YT Music/Pods-YT Music.debug.xcconfig"; sourceTree = "<group>"; };
-		6E1F2E78245D22CA0EB321BB /* Pods_YT_Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YT_Music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9D316F37D878F34D8107B0 /* Pods-YT Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YT Music.release.xcconfig"; path = "Pods/Target Support Files/Pods-YT Music/Pods-YT Music.release.xcconfig"; sourceTree = "<group>"; };
+		DFEE188A2697B56B000913BC /* TouchBarPrivateApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateApi.h; sourceTree = "<group>"; };
+		DFEE188B2697B671000913BC /* TouchBarPrivateApi-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchBarPrivateApi-Bridging.h"; sourceTree = "<group>"; };
+		DFEE188E269B1E18000913BC /* fa.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fa.otf; sourceTree = "<group>"; };
+		DFEE18A2269B47E7000913BC /* SupportNSTouchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportNSTouchBar.swift; sourceTree = "<group>"; };
+		DFEE18A4269B4B49000913BC /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
+		DFFF993326C58DFE00B14C8D /* TouchBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		224D278826C37AB700B3ADC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28DA92AF20D90169004B2A6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFEE18A5269B4B49000913BC /* DFRFoundation.framework in Frameworks */,
 				2818F51420F54D27006CEBB4 /* MediaPlayer.framework in Frameworks */,
-				28BB690E20EA56F100BD3AD6 /* DevMateKit.framework in Frameworks */,
-				DC8A73953AF08F2621981F7F /* Pods_YT_Music.framework in Frameworks */,
+				DD1C43A82A08CC98952A483A /* libPods-YT Music.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224D278C26C37AB700B3ADC4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				224D278D26C37AB700B3ADC4 /* YTMusicTests.swift */,
+				224D278F26C37AB700B3ADC4 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		2802617420EE6260001FDDCC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DFFF993326C58DFE00B14C8D /* TouchBarController.swift */,
+				DFEE18A2269B47E7000913BC /* SupportNSTouchBar.swift */,
 				28DA92B720D90169004B2A6D /* ViewController.swift */,
 				2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */,
 				2802617A20EE802B001FDDCC /* MediaCenter.swift */,
@@ -89,6 +128,9 @@
 		2802617520EE6271001FDDCC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22E7102927299CA7009E9C00 /* YT-Music.entitlements */,
+				224D279526C4047400B3ADC4 /* YT-Music-Debug.entitlements */,
+				DFEE188E269B1E18000913BC /* fa.otf */,
 				281CB55520F516100050D26D /* silence.mp3 */,
 				286AD73E20D9061400B2F45F /* custom.css */,
 				2802617820EE71C6001FDDCC /* observer.js */,
@@ -111,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				28DA92B420D90169004B2A6D /* YT Music */,
+				224D278C26C37AB700B3ADC4 /* Tests */,
 				28DA92B320D90169004B2A6D /* Products */,
 				D39C08024CED06FDA1C50BFF /* Pods */,
 				320842A7457275F8A861430A /* Frameworks */,
@@ -121,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				28DA92B220D90169004B2A6D /* YT Music.app */,
+				224D278B26C37AB700B3ADC4 /* YTMusicTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,15 +172,13 @@
 		28DA92B420D90169004B2A6D /* YT Music */ = {
 			isa = PBXGroup;
 			children = (
-				28BB690D20EA56F100BD3AD6 /* DevMateKit.framework */,
-				288C970E20D91A8B001672E1 /* YT Music.entitlements */,
+				DFEE18872697B4EF000913BC /* CBridge */,
 				2802617520EE6271001FDDCC /* Supporting Files */,
 				281F979A20E958C00033D930 /* Views */,
 				2802617420EE6260001FDDCC /* Controllers */,
 				28DA92B520D90169004B2A6D /* AppDelegate.swift */,
 				28DA92BB20D9016A004B2A6D /* Main.storyboard */,
 				28DA92BE20D9016A004B2A6D /* Info.plist */,
-				28BB691120EA57FB00BD3AD6 /* Bridge.h */,
 			);
 			path = "YT Music";
 			sourceTree = "<group>";
@@ -144,8 +186,9 @@
 		320842A7457275F8A861430A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFEE18A4269B4B49000913BC /* DFRFoundation.framework */,
 				2818F51320F54D27006CEBB4 /* MediaPlayer.framework */,
-				6E1F2E78245D22CA0EB321BB /* Pods_YT_Music.framework */,
+				396B6C8C07FADD7D45E2CCC6 /* libPods-YT Music.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,9 +202,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DFEE18872697B4EF000913BC /* CBridge */ = {
+			isa = PBXGroup;
+			children = (
+				DFEE188A2697B56B000913BC /* TouchBarPrivateApi.h */,
+				DFEE188B2697B671000913BC /* TouchBarPrivateApi-Bridging.h */,
+			);
+			path = CBridge;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		224D278A26C37AB700B3ADC4 /* YTMusicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 224D279426C37AB700B3ADC4 /* Build configuration list for PBXNativeTarget "YTMusicTests" */;
+			buildPhases = (
+				224D278726C37AB700B3ADC4 /* Sources */,
+				224D278826C37AB700B3ADC4 /* Frameworks */,
+				224D278926C37AB700B3ADC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				224D279126C37AB700B3ADC4 /* PBXTargetDependency */,
+			);
+			name = YTMusicTests;
+			productName = YTMusicTests;
+			productReference = 224D278B26C37AB700B3ADC4 /* YTMusicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		28DA92B120D90169004B2A6D /* YT Music */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28DA92C220D9016A004B2A6D /* Build configuration list for PBXNativeTarget "YT Music" */;
@@ -172,6 +242,7 @@
 				28DA92B020D90169004B2A6D /* Resources */,
 				197CCBA018FB601CA041E877 /* [CP] Embed Pods Frameworks */,
 				28BB690F20EA575600BD3AD6 /* CopyFiles */,
+				2229F9C5263080BE007AFF02 /* Sign Sparkle Autoupdate Binary */,
 			);
 			buildRules = (
 			);
@@ -188,12 +259,17 @@
 		28DA92AA20D90169004B2A6D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Cocoon Development Ltd";
 				TargetAttributes = {
+					224D278A26C37AB700B3ADC4 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 28DA92B120D90169004B2A6D;
+					};
 					28DA92B120D90169004B2A6D = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1240;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -216,11 +292,19 @@
 			projectRoot = "";
 			targets = (
 				28DA92B120D90169004B2A6D /* YT Music */,
+				224D278A26C37AB700B3ADC4 /* YTMusicTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		224D278926C37AB700B3ADC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28DA92B020D90169004B2A6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +313,7 @@
 				286AD73F20D9061400B2F45F /* custom.css in Resources */,
 				28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */,
 				2802617920EE71C6001FDDCC /* observer.js in Resources */,
+				DFEE188F269B1E18000913BC /* fa.otf in Resources */,
 				28DA92BD20D9016A004B2A6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,18 +326,35 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YT Music/Pods-YT Music-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MediaKeyTap/MediaKeyTap.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YT Music/Pods-YT Music-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MediaKeyTap.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YT Music/Pods-YT Music-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YT Music/Pods-YT Music-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YT Music/Pods-YT Music-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		2229F9C5263080BE007AFF02 /* Sign Sparkle Autoupdate Binary */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Sign Sparkle Autoupdate Binary";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=${EXPANDED_CODE_SIGN_IDENTITY_NAME}\n\ncodesign --verbose --force --deep -o runtime --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A/Resources/AutoUpdate.app\"\ncodesign --verbose --force -o runtime --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"\n";
 		};
 		3D779BB31E18C0949F71416E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -275,21 +377,40 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		224D278726C37AB700B3ADC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224D278E26C37AB700B3ADC4 /* YTMusicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28DA92AE20D90169004B2A6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2802617720EE629A001FDDCC /* ViewController + MediaKeys.swift in Sources */,
+				DFEE18A3269B47E7000913BC /* SupportNSTouchBar.swift in Sources */,
 				286AD74320D90E1B00B2F45F /* CustomWindow.swift in Sources */,
 				281F979920E9588A0033D930 /* WindowMovableView.swift in Sources */,
 				2802617B20EE802B001FDDCC /* MediaCenter.swift in Sources */,
 				28DA92B820D90169004B2A6D /* ViewController.swift in Sources */,
 				28DA92B620D90169004B2A6D /* AppDelegate.swift in Sources */,
 				286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */,
+				DFEE18842697A8D1000913BC /* (null) in Sources */,
+				DFFF993426C58DFE00B14C8D /* TouchBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		224D279126C37AB700B3ADC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28DA92B120D90169004B2A6D /* YT Music */;
+			targetProxy = 224D279026C37AB700B3ADC4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		28DA92BB20D9016A004B2A6D /* Main.storyboard */ = {
@@ -303,6 +424,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		224D279226C37AB700B3ADC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.YTMusicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YT Music.app/Contents/MacOS/YT Music";
+			};
+			name = Debug;
+		};
+		224D279326C37AB700B3ADC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.YTMusicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YT Music.app/Contents/MacOS/YT Music";
+			};
+			name = Release;
+		};
 		28DA92C020D9016A004B2A6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +498,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -358,6 +528,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -389,6 +560,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -411,6 +583,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -421,27 +594,30 @@
 			baseConfigurationReference = 5AED565561146EAC97AC8F55 /* Pods-YT Music.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "YT Music/Supporting Files/YT-Music-Debug.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = B598AEF9ZM;
+				CURRENT_PROJECT_VERSION = 13;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YT\\ Music",
-					"$(PROJECT_DIR)/YT\\ Music",
-					"$(PROJECT_DIR)/YT\\ Music/DevMateKit.framework/Frameworks",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "YT Music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.wearecocoon.YT-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/YT Music/Bridge.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "YT Music/CBridge/TouchBarPrivateApi-Bridging.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -450,33 +626,44 @@
 			baseConfigurationReference = DF9D316F37D878F34D8107B0 /* Pods-YT Music.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "YT Music/Supporting Files/YT-Music.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = B598AEF9ZM;
+				CURRENT_PROJECT_VERSION = 13;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YT\\ Music",
-					"$(PROJECT_DIR)/YT\\ Music",
-					"$(PROJECT_DIR)/YT\\ Music/DevMateKit.framework/Frameworks",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "YT Music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.wearecocoon.YT-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/YT Music/Bridge.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "YT Music/CBridge/TouchBarPrivateApi-Bridging.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		224D279426C37AB700B3ADC4 /* Build configuration list for PBXNativeTarget "YTMusicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224D279226C37AB700B3ADC4 /* Debug */,
+				224D279326C37AB700B3ADC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		28DA92AD20D90169004B2A6D /* Build configuration list for PBXProject "YT Music" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

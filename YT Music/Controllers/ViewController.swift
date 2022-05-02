@@ -150,8 +150,16 @@ class ViewController: NSViewController {
     
     func addMovableView() {
         movableView = WindowMovableView(frame: .zero)
+        movableView.parent = webView
         movableView.frame = CGRect(x: 0, y: 0, width: webView.frame.width, height: 20)
         webView.addSubview(movableView)
+    }
+    
+    // MARK: - NSTouchBarProvider
+    
+    @available(macOS 10.12.2, *)
+    override func makeTouchBar() -> NSTouchBar? {
+        return TouchBarController.shared.makeTouchBar()
     }
     
 }
@@ -162,7 +170,7 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print(error)
-        print(navigation)
+        print(navigation as Any)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

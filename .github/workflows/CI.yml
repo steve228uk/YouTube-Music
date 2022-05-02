@@ -1,0 +1,32 @@
+# Installs pod dependencies and then runs the unit test suite
+name: CI
+
+# Trigger CI when pushing to master, or opening PRs to master
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  test:
+    name: 'Run Unit Tests'
+
+    # Run on latest supported macOS version
+    runs-on: macOS-11
+
+    steps:
+
+    # Check-out the repo
+    - name: Check out Repository
+      uses: actions/checkout@v2
+
+    # Install the bundle dependencies
+    - name: Install dependencies
+      run: bundle install && bundle exec pod install
+
+    # Run the unit tests via xcodebuild
+    - name: Run Xcode Unit Tests
+      run: xcodebuild -workspace YT\ Music.xcworkspace -scheme YTMusicTests test

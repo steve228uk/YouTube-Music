@@ -8,27 +8,36 @@
 
 import Cocoa
 import MediaKeyTap
+import Magnet
 
 #if canImport(MediaPlayer)
 import MediaPlayer
 #endif
 
 extension ViewController: MediaKeyTapDelegate {
-    
     func registerRemoteCommands() {
-        if #available(OSX 10.12.2, *) {
-            let commandCenter = MPRemoteCommandCenter.shared()
-            commandCenter.playCommand.addTarget(self, action: #selector(play))
-            commandCenter.pauseCommand.addTarget(self, action: #selector(pause))
-            commandCenter.togglePlayPauseCommand.addTarget(self, action: #selector(playPause))
-            commandCenter.nextTrackCommand.addTarget(self, action: #selector(nextTrack))
-            commandCenter.nextTrackCommand.isEnabled = true
-            commandCenter.previousTrackCommand.addTarget(self, action: #selector(previousTrack))
-            commandCenter.previousTrackCommand.isEnabled = true
-            commandCenter.changePlaybackPositionCommand.addTarget(self, action: #selector(seek(_:)))
-        } else {
-            mediaKeyTap = MediaKeyTap(delegate: self)
-            mediaKeyTap?.start()
+        mediaKeyTap = MediaKeyTap(delegate: self)
+        mediaKeyTap?.start()
+        
+        if let keyCombo = KeyCombo(key: .space, cocoaModifiers: [.command, .shift]) {
+            let hotKey = HotKey(identifier: "space", keyCombo: keyCombo) { hotKey in
+                self.playPause()
+            }
+            hotKey.register()
+        }
+        
+        if let keyCombo = KeyCombo(key: .pageUp, cocoaModifiers: [.command, .shift]) {
+            let hotKey = HotKey(identifier: "pageup", keyCombo: keyCombo) { hotKey in
+                self.nextTrack()
+            }
+            hotKey.register()
+        }
+        
+        if let keyCombo = KeyCombo(key: .pageDown, cocoaModifiers: [.command, .shift]) {
+            let hotKey = HotKey(identifier: "pagedown", keyCombo: keyCombo) { hotKey in
+                self.previousTrack();
+            }
+            hotKey.register()
         }
     }
     
@@ -44,7 +53,7 @@ extension ViewController: MediaKeyTapDelegate {
         case .next, .fastForward:
             nextTrack()
             break
-        case.previous, .rewind:
+        case .previous, .rewind:
             previousTrack()
             break
         }
@@ -88,6 +97,15 @@ extension ViewController: MediaKeyTapDelegate {
     
     @objc func repeatTracks() {
         clickElement(selector: ".repeat")
+    }
+    
+    @objc func startSearch() {
+        let js = "var elem = document.getElementsByTagName('ytmusic-search-box')[0]; elem.setAttribute('opened', '');"
+        webView.evaluateJavaScript(js) { (_, error) in
+            if let error = error {
+                print(error)
+            }
+        }
     }
     
     func clickElement(selector: String) {

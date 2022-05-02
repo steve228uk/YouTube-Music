@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string/>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.6</string>
+	<string>1.3.1</string>
 	<key>CFBundleVersion</key>
-	<string>8</string>
+	<string>13</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
@@ -30,12 +30,22 @@
 		<true/>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2018 Cocoon Development Ltd. All rights reserved.</string>
+	<string>Copyright © 2018-2021 Cocoon Development Ltd. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSRequiresAquaSystemAppearance</key>
+	<string>False</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/steve228uk/YouTube-Music/master/Appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>YO6tYoi/sR5BGkxKpy491X+KjFb8sgOPr4OTIEHGwu0=</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>fa.otf</string>
+	</array>
 </dict>
 </plist>
