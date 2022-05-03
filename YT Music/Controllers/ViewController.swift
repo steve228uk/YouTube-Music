@@ -41,8 +41,24 @@ class ViewController: NSViewController {
         userContentController = WKUserContentController()
         userContentController.add(MediaCenter.default, name: "observer")
         webConfiguration.userContentController = userContentController
-        
-        
+
+        let blockRules = """
+            [{
+                "trigger": {
+                    "url-filter": "sw.js"
+                },
+                "action": {
+                    "type": "block"
+                }
+            }]
+         """
+
+        WKContentRuleListStore.default().compileContentRuleList(
+            forIdentifier: "ContentBlockingRules",
+            encodedContentRuleList: blockRules) { (contentRuleList, _) in
+                webConfiguration.userContentController.add(contentRuleList!)
+        }
+
         webView = CustomWebView(frame: .zero, configuration: webConfiguration)
         webView.wantsLayer = true
         webView.layerContentsRedrawPolicy = .onSetNeedsDisplay
