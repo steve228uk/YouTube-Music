@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2022-05-03
+
 ### Fixed
 
 * A periodic inconsistency where the app launches to a blank screen. [#164](https://github.com/steve228uk/YouTube-Music/pull/164)
@@ -122,7 +124,8 @@ I hope the changes are well received and any feedback or bugs can be reported on
 
 * Initial version of YT Music wrapper
 
-[Unreleased]: https://github.com/steve228uk/YouTube-Music/compare/1.3.1...HEAD
+[Unreleased]: https://github.com/steve228uk/YouTube-Music/compare/1.3.2...HEAD
+[1.3.2]: https://github.com/steve228uk/YouTube-Music/compare/1.3.1...1.3.2
 [1.3.1]: https://github.com/steve228uk/YouTube-Music/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/steve228uk/YouTube-Music/compare/1.2.0...1.3.0
 [1.2.0]: https://github.com/steve228uk/YouTube-Music/compare/1.1.1...1.2.0
