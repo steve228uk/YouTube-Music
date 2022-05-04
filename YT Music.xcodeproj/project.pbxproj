@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		224D278E26C37AB700B3ADC4 /* YTMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224D278D26C37AB700B3ADC4 /* YTMusicTests.swift */; };
 		2802617720EE629A001FDDCC /* ViewController + MediaKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */; };
-		2802617920EE71C6001FDDCC /* observer.js in Resources */ = {isa = PBXBuildFile; fileRef = 2802617820EE71C6001FDDCC /* observer.js */; };
+		2802617920EE71C6001FDDCC /* custom.js in Resources */ = {isa = PBXBuildFile; fileRef = 2802617820EE71C6001FDDCC /* custom.js */; };
 		2802617B20EE802B001FDDCC /* MediaCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802617A20EE802B001FDDCC /* MediaCenter.swift */; };
 		2818F51420F54D27006CEBB4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818F51320F54D27006CEBB4 /* MediaPlayer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		281CB55620F516110050D26D /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 281CB55520F516100050D26D /* silence.mp3 */; };
@@ -58,7 +58,7 @@
 		224D279526C4047400B3ADC4 /* YT-Music-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT-Music-Debug.entitlements"; sourceTree = "<group>"; };
 		22E7102927299CA7009E9C00 /* YT-Music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YT-Music.entitlements"; sourceTree = "<group>"; };
 		2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + MediaKeys.swift"; sourceTree = "<group>"; };
-		2802617820EE71C6001FDDCC /* observer.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = observer.js; sourceTree = "<group>"; };
+		2802617820EE71C6001FDDCC /* custom.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = custom.js; sourceTree = "<group>"; };
 		2802617A20EE802B001FDDCC /* MediaCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCenter.swift; sourceTree = "<group>"; };
 		2818F51320F54D27006CEBB4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		281CB55520F516100050D26D /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
@@ -128,12 +128,12 @@
 		2802617520EE6271001FDDCC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2802617820EE71C6001FDDCC /* custom.js */,
 				22E7102927299CA7009E9C00 /* YT-Music.entitlements */,
 				224D279526C4047400B3ADC4 /* YT-Music-Debug.entitlements */,
 				DFEE188E269B1E18000913BC /* fa.otf */,
 				281CB55520F516100050D26D /* silence.mp3 */,
 				286AD73E20D9061400B2F45F /* custom.css */,
-				2802617820EE71C6001FDDCC /* observer.js */,
 				28DA92B920D9016A004B2A6D /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
@@ -312,7 +312,7 @@
 				281CB55620F516110050D26D /* silence.mp3 in Resources */,
 				286AD73F20D9061400B2F45F /* custom.css in Resources */,
 				28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */,
-				2802617920EE71C6001FDDCC /* observer.js in Resources */,
+				2802617920EE71C6001FDDCC /* custom.js in Resources */,
 				DFEE188F269B1E18000913BC /* fa.otf in Resources */,
 				28DA92BD20D9016A004B2A6D /* Main.storyboard in Resources */,
 			);

@@ -196,7 +196,7 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
         }
         
         injectCustomCSS()
-        injectObservers()
+        injectCustomJS()
         view.animator().alphaValue = 1
     }
     
@@ -220,8 +220,9 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
     
     /// Injects observers that the WKScriptMessageHandler will hear back from.
     /// These are used to detect when a track is playing etc.
-    func injectObservers() {
-        guard let jsURL = Bundle.main.url(forResource: "observer", withExtension: "js"),
+    /// Also unregister any service workers that youtube music has registered.
+    func injectCustomJS() {
+        guard let jsURL = Bundle.main.url(forResource: "custom", withExtension: "js"),
         let js = try? String(contentsOf: jsURL) else {
             return
         }
@@ -232,5 +233,4 @@ extension ViewController: WKNavigationDelegate, WKUIDelegate {
             }
         }
     }
-
 }
