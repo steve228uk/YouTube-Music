@@ -1,5 +1,15 @@
 window.setTimeout(function() {
-             
+  if (navigator && navigator.serviceWorker) {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      for (let registration of registrations) {
+        registration.unregister()
+      }
+      if (registrations && registration.length > 0) {
+        window.location.reload()
+      }
+    })
+  }
+    
   var observer = new MutationObserver(function(mutations) {
 
     let bar = document.querySelector('#progress-bar');
