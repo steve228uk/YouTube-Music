@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+* Added an explicit check to clear out registered service workers that cause blank screens on launch. [#167](https://github.com/steve228uk/YouTube-Music/pull/167)
+
 ## [1.3.2] - 2022-05-03
 
 ### Fixed
