@@ -9,6 +9,7 @@
 import Cocoa
 import WebKit
 import MediaKeyTap
+import Magnet
 
 class ViewController: NSViewController {
 
@@ -21,6 +22,7 @@ class ViewController: NSViewController {
     var forwardButton: NSButton!
     var backObservation: NSKeyValueObservation?
     var forwardObservation: NSKeyValueObservation?
+    var playPauseHotkey: HotKey?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class ViewController: NSViewController {
         let request = URLRequest(url: url)
         webView.load(request)
         
+        initializeHotKeys()
         registerRemoteCommands()
         addObservers()
     }
@@ -108,6 +111,14 @@ class ViewController: NSViewController {
         
     }
     
+    func initializeHotKeys() {
+        if let keyCombo = KeyCombo(key: .space, cocoaModifiers: [.command, .shift]) {
+            playPauseHotkey = HotKey(identifier: "sapce", keyCombo: keyCombo) { hotKey in
+                self.playPause()
+            }
+        }
+    }
+    
     func addObservers() {
         backObservation = webView.observe(\CustomWebView.canGoBack) { (webView, _) in
             self.backButton.isEnabled = webView.canGoBack
@@ -119,6 +130,11 @@ class ViewController: NSViewController {
             self.forwardButton.image = webView.canGoForward ? #imageLiteral(resourceName: "Forward Arrow Active") : #imageLiteral(resourceName: "Forward Arrow Inactive")
         }
     
+        NotificationCenter.default.addObserver(self, selector: #selector(preferencesChanged), name: NSNotification.Name.PreferencesChanged, object: nil)
+    }
+    
+    @objc func preferencesChanged(notification: NSNotification) {
+        registerRemoteCommands()
     }
     
     func addNavigationButtons() {

@@ -18,12 +18,13 @@ extension ViewController: MediaKeyTapDelegate {
     func registerRemoteCommands() {
         mediaKeyTap = MediaKeyTap(delegate: self)
         mediaKeyTap?.start()
-        
-        if let keyCombo = KeyCombo(key: .space, cocoaModifiers: [.command, .shift]) {
-            let hotKey = HotKey(identifier: "space", keyCombo: keyCombo) { hotKey in
-                self.playPause()
-            }
-            hotKey.register()
+       
+
+        let isUseGlobalPlayShortcut = UserDefaults.standard.integer(forKey: "globalPlayShortcut")
+        if isUseGlobalPlayShortcut != 0 {
+            playPauseHotkey?.register()
+        } else {
+            playPauseHotkey?.unregister()
         }
         
         if let keyCombo = KeyCombo(key: .pageUp, cocoaModifiers: [.command, .shift]) {

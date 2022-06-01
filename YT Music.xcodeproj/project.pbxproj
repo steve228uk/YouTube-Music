@@ -21,6 +21,8 @@
 		28DA92B820D90169004B2A6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DA92B720D90169004B2A6D /* ViewController.swift */; };
 		28DA92BA20D9016A004B2A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92B920D9016A004B2A6D /* Assets.xcassets */; };
 		28DA92BD20D9016A004B2A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92BB20D9016A004B2A6D /* Main.storyboard */; };
+		4A25279A2847A73200C7E419 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2527992847A73200C7E419 /* PreferencesViewController.swift */; };
+		4A25279C28481CF100C7E419 /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25279B28481CF100C7E419 /* PreferencesTabViewController.swift */; };
 		DD1C43A82A08CC98952A483A /* libPods-YT Music.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 396B6C8C07FADD7D45E2CCC6 /* libPods-YT Music.a */; };
 		DFEE18842697A8D1000913BC /* (null) in Sources */ = {isa = PBXBuildFile; };
 		DFEE188F269B1E18000913BC /* fa.otf in Resources */ = {isa = PBXBuildFile; fileRef = DFEE188E269B1E18000913BC /* fa.otf */; };
@@ -73,6 +75,8 @@
 		28DA92BC20D9016A004B2A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28DA92BE20D9016A004B2A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		396B6C8C07FADD7D45E2CCC6 /* libPods-YT Music.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YT Music.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A2527992847A73200C7E419 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		4A25279B28481CF100C7E419 /* PreferencesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTabViewController.swift; sourceTree = "<group>"; };
 		5AED565561146EAC97AC8F55 /* Pods-YT Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YT Music.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YT Music/Pods-YT Music.debug.xcconfig"; sourceTree = "<group>"; };
 		DF9D316F37D878F34D8107B0 /* Pods-YT Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YT Music.release.xcconfig"; path = "Pods/Target Support Files/Pods-YT Music/Pods-YT Music.release.xcconfig"; sourceTree = "<group>"; };
 		DFEE188A2697B56B000913BC /* TouchBarPrivateApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateApi.h; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				28DA92B720D90169004B2A6D /* ViewController.swift */,
 				2802617620EE629A001FDDCC /* ViewController + MediaKeys.swift */,
 				2802617A20EE802B001FDDCC /* MediaCenter.swift */,
+				4A2527992847A73200C7E419 /* PreferencesViewController.swift */,
+				4A25279B28481CF100C7E419 /* PreferencesTabViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2802617720EE629A001FDDCC /* ViewController + MediaKeys.swift in Sources */,
+				4A25279C28481CF100C7E419 /* PreferencesTabViewController.swift in Sources */,
 				DFEE18A3269B47E7000913BC /* SupportNSTouchBar.swift in Sources */,
 				286AD74320D90E1B00B2F45F /* CustomWindow.swift in Sources */,
 				281F979920E9588A0033D930 /* WindowMovableView.swift in Sources */,
@@ -399,6 +406,7 @@
 				286AD74120D909AB00B2F45F /* CustomWebView.swift in Sources */,
 				DFEE18842697A8D1000913BC /* (null) in Sources */,
 				DFFF993426C58DFE00B14C8D /* TouchBarController.swift in Sources */,
+				4A25279A2847A73200C7E419 /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

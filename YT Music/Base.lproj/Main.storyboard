@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,6 +26,12 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="checkForUpdates:" target="qxC-sg-b5d" id="3H8-Fu-fsd"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Vt7-nX-Uv5"/>
+                                        <menuItem title="Preferences" keyEquivalent="," id="8qR-rK-Mx1">
+                                            <connections>
+                                                <segue destination="SHP-Rq-Edu" kind="show" id="0M3-Tb-9G9"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="czp-PY-bIU"/>
@@ -257,6 +263,75 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="244"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="H13-7K-AGH">
+            <objects>
+                <tabViewController title="Preferences" showSeguePresentationStyle="single" selectedTabViewItemIndex="0" tabStyle="toolbar" id="SHP-Rq-Edu" customClass="PreferencesTabViewController" customModule="YT_Music" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem id="657-bm-f5F"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="pEw-jD-OiR">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <connections>
+                            <outlet property="delegate" destination="SHP-Rq-Edu" id="fSh-fe-XUM"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="pEw-jD-OiR" id="Oz2-bc-XTu"/>
+                        <segue destination="k5E-lF-FbM" kind="relationship" relationship="tabItems" id="ha2-k1-S2u"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="A77-mG-hYi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="234"/>
+        </scene>
+        <!--Hotkeys-->
+        <scene sceneID="0eH-qI-SkZ">
+            <objects>
+                <viewController title="Hotkeys" id="k5E-lF-FbM" customClass="PreferencesViewController" customModule="YT_Music" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="zPj-ER-Yt9">
+                        <rect key="frame" x="0.0" y="0.0" width="459" height="200"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x13-w1-cFP">
+                                <rect key="frame" x="18" y="163" width="421" height="18"/>
+                                <buttonCell key="cell" type="check" title="Use Global Play/Pause Shortcuts" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="IHJ-PA-oQc">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="globalPlayShortcutToggled:" target="k5E-lF-FbM" id="hJ7-2G-eQR"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GAk-hG-rlX">
+                                <rect key="frame" x="18" y="142" width="423" height="14"/>
+                                <textFieldCell key="cell" title="Allows using Play/Pause global keyboard shortcut - ⌘ ⇧ Spacebar" id="A1P-bH-DJd">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="GAk-hG-rlX" firstAttribute="top" secondItem="x13-w1-cFP" secondAttribute="bottom" constant="8" symbolic="YES" id="RV5-el-16h"/>
+                            <constraint firstItem="x13-w1-cFP" firstAttribute="top" secondItem="zPj-ER-Yt9" secondAttribute="top" constant="20" symbolic="YES" id="W9B-de-nsu"/>
+                            <constraint firstAttribute="trailing" secondItem="GAk-hG-rlX" secondAttribute="trailing" constant="20" symbolic="YES" id="bbY-0R-2vh"/>
+                            <constraint firstItem="x13-w1-cFP" firstAttribute="leading" secondItem="zPj-ER-Yt9" secondAttribute="leading" constant="20" symbolic="YES" id="dJv-06-d23"/>
+                            <constraint firstAttribute="trailing" secondItem="x13-w1-cFP" secondAttribute="trailing" constant="20" symbolic="YES" id="dTb-ly-iNJ"/>
+                            <constraint firstItem="GAk-hG-rlX" firstAttribute="leading" secondItem="x13-w1-cFP" secondAttribute="leading" id="gfT-dm-47t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="globalPlayPauseCheckbox" destination="x13-w1-cFP" id="RP2-W4-MeA"/>
+                    </connections>
+                </viewController>
+                <customObject id="uIw-2e-8tr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="hpa-VM-qxH"/>
+            </objects>
+            <point key="canvasLocation" x="833.5" y="649"/>
         </scene>
         <!--YouTube Music-->
         <scene sceneID="hIz-AP-VOD">
