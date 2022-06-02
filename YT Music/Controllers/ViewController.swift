@@ -22,7 +22,7 @@ class ViewController: NSViewController {
     var forwardButton: NSButton!
     var backObservation: NSKeyValueObservation?
     var forwardObservation: NSKeyValueObservation?
-    var playPauseHotkey: HotKey?
+    var keyboardShortcuts: [KeyboardShortcut: HotKey] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class ViewController: NSViewController {
         let request = URLRequest(url: url)
         webView.load(request)
         
-        initializeHotKeys()
+        initializeKeyboardShortcuts()
         registerRemoteCommands()
         addObservers()
     }
@@ -111,10 +111,20 @@ class ViewController: NSViewController {
         
     }
     
-    func initializeHotKeys() {
+    func initializeKeyboardShortcuts() {
         if let keyCombo = KeyCombo(key: .space, cocoaModifiers: [.command, .shift]) {
-            playPauseHotkey = HotKey(identifier: "sapce", keyCombo: keyCombo) { hotKey in
+            keyboardShortcuts[.playPause] = HotKey(identifier: "space", keyCombo: keyCombo) { hotKey in
                 self.playPause()
+            }
+        }
+        if let keyCombo = KeyCombo(key: .pageUp, cocoaModifiers: [.command, .shift]) {
+            keyboardShortcuts[.next] = HotKey(identifier: "pageup", keyCombo: keyCombo) { hotKey in
+                self.nextTrack()
+            }
+        }
+        if let keyCombo = KeyCombo(key: .pageDown, cocoaModifiers: [.command, .shift]) {
+            keyboardShortcuts[.previous] = HotKey(identifier: "pagedown", keyCombo: keyCombo) { hotKey in
+                self.previousTrack();
             }
         }
     }
@@ -134,7 +144,7 @@ class ViewController: NSViewController {
     }
     
     @objc func preferencesChanged(notification: NSNotification) {
-        registerRemoteCommands()
+        refreshHotkeys()
     }
     
     func addNavigationButtons() {

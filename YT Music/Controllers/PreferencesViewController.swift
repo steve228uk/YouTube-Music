@@ -13,30 +13,44 @@ class PreferencesViewController: NSViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var globalPlayPauseCheckbox: NSButton!
+    @IBOutlet weak var globalNextTrackCheckbox: NSButton!
+    @IBOutlet weak var globalPreviousTrackCheckbox: NSButton!
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let globalPlayPauseRaw = UserDefaults.standard.integer(forKey: "globalPlayShortcut")
-        globalPlayPauseCheckbox.state = NSControl.StateValue(globalPlayPauseRaw)
+        globalPlayPauseCheckbox.state = KeyboardShortcut.playPause.isEnabled.asControlState
+        globalNextTrackCheckbox.state = KeyboardShortcut.next.isEnabled.asControlState
+        globalPreviousTrackCheckbox.state = KeyboardShortcut.previous.isEnabled.asControlState
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        preferredContentSize = NSSize(width: self.view.frame.width, height: 200)
+        preferredContentSize = NSSize(width: self.view.frame.width, height: 220)
     }
     
     // MARK: - Action Methods
     
-    @IBAction func globalPlayShortcutToggled(_ sender: NSButton) {
-        UserDefaults.standard.set(sender.state.rawValue, forKey: "globalPlayShortcut")
-        UserDefaults.standard.synchronize()
-        NotificationCenter.default.post(name: NSNotification.Name.PreferencesChanged, object: self)
+    @IBAction func globalPlayPauseCheckboxToggled(_ sender: NSButton) {
+        KeyboardShortcut.playPause.setEnabled(sender.state.rawValue != 0)
     }
+    
+    @IBAction func globalNextTrackCheckboxToggled(_ sender: NSButton) {
+        KeyboardShortcut.next.setEnabled(sender.state.rawValue != 0)
+    }
+    
+    @IBAction func globalPreviousTrackCheckboxToggled(_ sender: NSButton) {
+        KeyboardShortcut.previous.setEnabled(sender.state.rawValue != 0)
+    }
+    
 }
 
-extension NSNotification.Name {
-    static let PreferencesChanged = NSNotification.Name(rawValue: "preferencesChanged")
+extension Bool {
+    
+    var asControlState: NSControl.StateValue {
+        self ? NSControl.StateValue.on : NSControl.StateValue.off
+    }
+    
 }
