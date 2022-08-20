@@ -15,29 +15,21 @@ import MediaPlayer
 #endif
 
 extension ViewController: MediaKeyTapDelegate {
+    
     func registerRemoteCommands() {
         mediaKeyTap = MediaKeyTap(delegate: self)
         mediaKeyTap?.start()
-        
-        if let keyCombo = KeyCombo(key: .space, cocoaModifiers: [.command, .shift]) {
-            let hotKey = HotKey(identifier: "space", keyCombo: keyCombo) { hotKey in
-                self.playPause()
+       
+        refreshHotkeys()
+    }
+    
+    func refreshHotkeys() {
+        keyboardShortcuts.keys.forEach { key in
+            if key.isEnabled {
+                keyboardShortcuts[key]?.register()
+            } else {
+                keyboardShortcuts[key]?.unregister()
             }
-            hotKey.register()
-        }
-        
-        if let keyCombo = KeyCombo(key: .pageUp, cocoaModifiers: [.command, .shift]) {
-            let hotKey = HotKey(identifier: "pageup", keyCombo: keyCombo) { hotKey in
-                self.nextTrack()
-            }
-            hotKey.register()
-        }
-        
-        if let keyCombo = KeyCombo(key: .pageDown, cocoaModifiers: [.command, .shift]) {
-            let hotKey = HotKey(identifier: "pagedown", keyCombo: keyCombo) { hotKey in
-                self.previousTrack();
-            }
-            hotKey.register()
         }
     }
     

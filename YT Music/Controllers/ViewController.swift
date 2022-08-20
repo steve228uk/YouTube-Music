@@ -9,6 +9,7 @@
 import Cocoa
 import WebKit
 import MediaKeyTap
+import Magnet
 
 class ViewController: NSViewController {
 
@@ -21,6 +22,7 @@ class ViewController: NSViewController {
     var forwardButton: NSButton!
     var backObservation: NSKeyValueObservation?
     var forwardObservation: NSKeyValueObservation?
+    var keyboardShortcuts: [KeyboardShortcut: HotKey] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class ViewController: NSViewController {
         let request = URLRequest(url: url)
         webView.load(request)
         
+        initializeKeyboardShortcuts()
         registerRemoteCommands()
         addObservers()
     }
@@ -108,6 +111,24 @@ class ViewController: NSViewController {
         
     }
     
+    func initializeKeyboardShortcuts() {
+        if let keyCombo = KeyCombo(key: .space, cocoaModifiers: [.command, .shift]) {
+            keyboardShortcuts[.playPause] = HotKey(identifier: "space", keyCombo: keyCombo) { hotKey in
+                self.playPause()
+            }
+        }
+        if let keyCombo = KeyCombo(key: .pageUp, cocoaModifiers: [.command, .shift]) {
+            keyboardShortcuts[.next] = HotKey(identifier: "pageup", keyCombo: keyCombo) { hotKey in
+                self.nextTrack()
+            }
+        }
+        if let keyCombo = KeyCombo(key: .pageDown, cocoaModifiers: [.command, .shift]) {
+            keyboardShortcuts[.previous] = HotKey(identifier: "pagedown", keyCombo: keyCombo) { hotKey in
+                self.previousTrack();
+            }
+        }
+    }
+    
     func addObservers() {
         backObservation = webView.observe(\CustomWebView.canGoBack) { (webView, _) in
             self.backButton.isEnabled = webView.canGoBack
@@ -119,6 +140,11 @@ class ViewController: NSViewController {
             self.forwardButton.image = webView.canGoForward ? #imageLiteral(resourceName: "Forward Arrow Active") : #imageLiteral(resourceName: "Forward Arrow Inactive")
         }
     
+        NotificationCenter.default.addObserver(self, selector: #selector(preferencesChanged), name: NSNotification.Name.PreferencesChanged, object: nil)
+    }
+    
+    @objc func preferencesChanged(notification: NSNotification) {
+        refreshHotkeys()
     }
     
     func addNavigationButtons() {
