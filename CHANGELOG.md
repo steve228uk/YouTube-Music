@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+* Added preferences pane to optionally disable the global media hotkeys. [#170](https://github.com/steve228uk/YouTube-Music/pull/170)
+
 ## [1.3.3] - 2022-05-05
 
 ### Fixed
