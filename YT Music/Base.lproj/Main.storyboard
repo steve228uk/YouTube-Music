@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -269,6 +269,7 @@
             <objects>
                 <tabViewController title="Preferences" showSeguePresentationStyle="single" selectedTabViewItemIndex="0" tabStyle="toolbar" id="SHP-Rq-Edu" customClass="PreferencesTabViewController" customModule="YT_Music" customModuleProvider="target" sceneMemberID="viewController">
                     <tabViewItems>
+                        <tabViewItem id="Nda-Nn-7Jl"/>
                         <tabViewItem id="657-bm-f5F"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="pEw-jD-OiR">
@@ -281,6 +282,7 @@
                     </tabView>
                     <connections>
                         <outlet property="tabView" destination="pEw-jD-OiR" id="Oz2-bc-XTu"/>
+                        <segue destination="v9I-5X-UXY" kind="relationship" relationship="tabItems" id="J9z-YT-ate"/>
                         <segue destination="k5E-lF-FbM" kind="relationship" relationship="tabItems" id="ha2-k1-S2u"/>
                     </connections>
                 </tabViewController>
@@ -291,13 +293,13 @@
         <!--Hotkeys-->
         <scene sceneID="0eH-qI-SkZ">
             <objects>
-                <viewController title="Hotkeys" id="k5E-lF-FbM" customClass="PreferencesViewController" customModule="YT_Music" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Hotkeys" id="k5E-lF-FbM" customClass="HotkeyPreferencesViewController" customModule="YT_Music" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="zPj-ER-Yt9">
-                        <rect key="frame" x="0.0" y="0.0" width="459" height="220"/>
+                        <rect key="frame" x="0.0" y="0.0" width="459" height="198"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x13-w1-cFP">
-                                <rect key="frame" x="18" y="183" width="421" height="18"/>
+                                <rect key="frame" x="18" y="161" width="421" height="18"/>
                                 <buttonCell key="cell" type="check" title="Enable Global Play/Pause Hotkey" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="IHJ-PA-oQc">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -307,7 +309,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GAk-hG-rlX">
-                                <rect key="frame" x="18" y="162" width="423" height="14"/>
+                                <rect key="frame" x="18" y="140" width="423" height="14"/>
                                 <textFieldCell key="cell" title="Allows using Play/Pause global keyboard shortcut - ⌘ ⇧ Spacebar" id="A1P-bH-DJd">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -315,7 +317,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v3p-PO-IHh">
-                                <rect key="frame" x="18" y="121" width="421" height="18"/>
+                                <rect key="frame" x="18" y="99" width="421" height="18"/>
                                 <buttonCell key="cell" type="check" title="Enable Global Next Track Hotkey" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wdk-Ug-Xn8">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -325,7 +327,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0nR-V1-Slq">
-                                <rect key="frame" x="18" y="100" width="343" height="14"/>
+                                <rect key="frame" x="18" y="78" width="427" height="14"/>
                                 <textFieldCell key="cell" title="Allows using Play/Pause global keyboard shortcut - ⌘ ⇧ PageUp" id="jmF-fH-bsp">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -333,7 +335,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="45U-pJ-yMB">
-                                <rect key="frame" x="18" y="59" width="421" height="18"/>
+                                <rect key="frame" x="18" y="37" width="421" height="18"/>
                                 <buttonCell key="cell" type="check" title="Enable Global Previous Track Hotkey" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="joI-Qs-8ro">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -343,7 +345,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xui-VJ-gz4">
-                                <rect key="frame" x="18" y="38" width="358" height="14"/>
+                                <rect key="frame" x="18" y="16" width="427" height="14"/>
                                 <textFieldCell key="cell" title="Allows using Play/Pause global keyboard shortcut - ⌘ ⇧ PageDown" id="1ez-lX-evb">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -356,6 +358,7 @@
                             <constraint firstItem="0nR-V1-Slq" firstAttribute="leading" secondItem="v3p-PO-IHh" secondAttribute="leading" id="Afn-VS-N3q"/>
                             <constraint firstItem="Xui-VJ-gz4" firstAttribute="leading" secondItem="45U-pJ-yMB" secondAttribute="leading" id="CHc-Aw-ArD"/>
                             <constraint firstItem="45U-pJ-yMB" firstAttribute="top" secondItem="0nR-V1-Slq" secondAttribute="bottom" constant="24" id="EDs-xh-idX"/>
+                            <constraint firstAttribute="bottom" secondItem="Xui-VJ-gz4" secondAttribute="bottom" constant="16" id="Mgm-qt-xrM"/>
                             <constraint firstItem="GAk-hG-rlX" firstAttribute="top" secondItem="x13-w1-cFP" secondAttribute="bottom" constant="8" symbolic="YES" id="RV5-el-16h"/>
                             <constraint firstItem="v3p-PO-IHh" firstAttribute="top" secondItem="GAk-hG-rlX" secondAttribute="bottom" constant="24" id="Sa6-wT-exy"/>
                             <constraint firstItem="x13-w1-cFP" firstAttribute="top" secondItem="zPj-ER-Yt9" secondAttribute="top" constant="20" symbolic="YES" id="W9B-de-nsu"/>
@@ -364,8 +367,10 @@
                             <constraint firstAttribute="trailing" secondItem="x13-w1-cFP" secondAttribute="trailing" constant="20" symbolic="YES" id="dTb-ly-iNJ"/>
                             <constraint firstItem="45U-pJ-yMB" firstAttribute="leading" secondItem="zPj-ER-Yt9" secondAttribute="leading" constant="20" symbolic="YES" id="gQG-O6-W7D"/>
                             <constraint firstItem="GAk-hG-rlX" firstAttribute="leading" secondItem="x13-w1-cFP" secondAttribute="leading" id="gfT-dm-47t"/>
+                            <constraint firstAttribute="trailing" secondItem="0nR-V1-Slq" secondAttribute="trailing" constant="16" id="hUQ-rP-On5"/>
                             <constraint firstItem="0nR-V1-Slq" firstAttribute="top" secondItem="v3p-PO-IHh" secondAttribute="bottom" constant="8" symbolic="YES" id="mNl-ir-lYA"/>
                             <constraint firstItem="Xui-VJ-gz4" firstAttribute="top" secondItem="45U-pJ-yMB" secondAttribute="bottom" constant="8" symbolic="YES" id="ngp-6E-Y66"/>
+                            <constraint firstAttribute="trailing" secondItem="Xui-VJ-gz4" secondAttribute="trailing" constant="16" id="uRg-Fo-dSp"/>
                             <constraint firstAttribute="trailing" secondItem="v3p-PO-IHh" secondAttribute="trailing" constant="20" symbolic="YES" id="vA4-1G-7iX"/>
                             <constraint firstItem="v3p-PO-IHh" firstAttribute="leading" secondItem="zPj-ER-Yt9" secondAttribute="leading" constant="20" symbolic="YES" id="vyS-l0-6lk"/>
                         </constraints>
@@ -379,7 +384,7 @@
                 <customObject id="uIw-2e-8tr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="hpa-VM-qxH"/>
             </objects>
-            <point key="canvasLocation" x="833.5" y="659"/>
+            <point key="canvasLocation" x="843" y="690"/>
         </scene>
         <!--YouTube Music-->
         <scene sceneID="hIz-AP-VOD">
@@ -393,6 +398,52 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="907"/>
+        </scene>
+        <!--General-->
+        <scene sceneID="7Uh-NS-8sI">
+            <objects>
+                <viewController title="General" id="v9I-5X-UXY" customClass="GeneralPreferencesViewController" customModule="YT_Music" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="WZc-R3-nRi">
+                        <rect key="frame" x="0.0" y="0.0" width="459" height="74"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y2a-CJ-Gpy">
+                                <rect key="frame" x="18" y="37" width="421" height="18"/>
+                                <buttonCell key="cell" type="check" title="Enable push notifications" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="8Ws-LH-B1W">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="pushNotificationsCheckboxToggled:" target="v9I-5X-UXY" id="hJe-La-wxq"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xkS-oy-Nar">
+                                <rect key="frame" x="18" y="16" width="423" height="14"/>
+                                <textFieldCell key="cell" title="Displays push notifications whenever a new song has started to play" id="5C2-O0-VZs">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xkS-oy-Nar" firstAttribute="leading" secondItem="y2a-CJ-Gpy" secondAttribute="leading" id="G5i-2q-Rg6"/>
+                            <constraint firstAttribute="bottom" secondItem="xkS-oy-Nar" secondAttribute="bottom" constant="16" id="Jcw-xx-KVo"/>
+                            <constraint firstItem="xkS-oy-Nar" firstAttribute="top" secondItem="y2a-CJ-Gpy" secondAttribute="bottom" constant="8" symbolic="YES" id="h6b-4N-sWj"/>
+                            <constraint firstAttribute="trailing" secondItem="y2a-CJ-Gpy" secondAttribute="trailing" constant="20" symbolic="YES" id="jId-Au-kqu"/>
+                            <constraint firstItem="y2a-CJ-Gpy" firstAttribute="top" secondItem="WZc-R3-nRi" secondAttribute="top" constant="20" symbolic="YES" id="o1a-21-MTb"/>
+                            <constraint firstAttribute="trailing" secondItem="xkS-oy-Nar" secondAttribute="trailing" constant="20" symbolic="YES" id="rwt-8G-FhS"/>
+                            <constraint firstItem="y2a-CJ-Gpy" firstAttribute="leading" secondItem="WZc-R3-nRi" secondAttribute="leading" constant="20" symbolic="YES" id="zUa-RJ-Aor"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pushNotificationsCheckbox" destination="y2a-CJ-Gpy" id="45n-pW-Gaj"/>
+                    </connections>
+                </viewController>
+                <customObject id="RBU-ed-syr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="4u7-tS-zkF"/>
+            </objects>
+            <point key="canvasLocation" x="1330" y="690"/>
         </scene>
     </scenes>
 </document>

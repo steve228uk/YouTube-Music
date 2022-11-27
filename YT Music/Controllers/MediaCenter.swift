@@ -88,13 +88,14 @@ class MediaCenter: NSObject, WKScriptMessageHandler, NSUserNotificationCenterDel
     
     /// Sends an `NSUserNotification` regarding the song change.
     func sendNotificationIfRequired() {
-        guard let title = title,
-        let by = by,
-        let thumbnail = thumbnail,
-        let thumbnailURL = URL(string: thumbnail),
-        title != "",
-        by != "",
-        titleChanged || byChanged else {
+        guard GeneralPreferences.pushNotifications.isEnabled,
+            let title,
+            let by,
+            let thumbnail,
+            let thumbnailURL = URL(string: thumbnail),
+            !title.isEmpty,
+            !by.isEmpty,
+            titleChanged || byChanged else {
             return
         }
         
