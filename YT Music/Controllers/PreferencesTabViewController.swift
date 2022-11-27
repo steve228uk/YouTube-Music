@@ -12,12 +12,14 @@ class PreferencesTabViewController: NSTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if #available(macOS 11.0, *) {
-            tabViewItems[0].image = NSImage(systemSymbolName: "keyboard", accessibilityDescription: "Keyboard Shortcuts")
-        } else {
-            tabViewItems[0].image = NSImage(named: NSImage.preferencesGeneralName)
+
+        guard #available(macOS 11.0, *) else {
+            tabViewItems.forEach { $0.image = NSImage(named: NSImage.preferencesGeneralName) }
+            return
         }
+
+        tabViewItems[0].image = NSImage(systemSymbolName: "gear", accessibilityDescription: "General preferences")
+        tabViewItems[1].image = NSImage(systemSymbolName: "keyboard", accessibilityDescription: "Keyboard Shortcuts")
     }
     
 }

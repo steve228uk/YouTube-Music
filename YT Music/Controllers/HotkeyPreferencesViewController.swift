@@ -1,5 +1,5 @@
 //
-//  PreferencesViewController.swift
+//  HotkeyPreferencesViewController.swift
 //  YT Music
 //
 //  Created by Rafael Veronezi on 01/06/22.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PreferencesViewController: NSViewController {
+class HotkeyPreferencesViewController: NSViewController {
 
     // MARK: - Outlets
     
@@ -24,11 +24,6 @@ class PreferencesViewController: NSViewController {
         globalPlayPauseCheckbox.state = KeyboardShortcut.playPause.isEnabled.asControlState
         globalNextTrackCheckbox.state = KeyboardShortcut.next.isEnabled.asControlState
         globalPreviousTrackCheckbox.state = KeyboardShortcut.previous.isEnabled.asControlState
-    }
-    
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        preferredContentSize = NSSize(width: self.view.frame.width, height: 220)
     }
     
     // MARK: - Action Methods
