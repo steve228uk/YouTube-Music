@@ -62,7 +62,9 @@ class MediaCenter: NSObject, WKScriptMessageHandler, NSUserNotificationCenterDel
     
     var isPlaying = false {
         didSet {
-            (NSApp.delegate as? AppDelegate)?.dockMenu.item(at: 0)?.title = isPlaying ? "Pause" : "Play"
+            let newMenuTitle = isPlaying ? "Pause" : "Play"
+            (NSApp.delegate as? AppDelegate)?.dockMenu.item(at: 0)?.title = newMenuTitle
+            NSApp.mainMenu?.items.filter { $0.title == "Playback" }.first?.submenu?.items.first?.title = newMenuTitle
         }
     }
     
