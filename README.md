@@ -26,7 +26,7 @@ The latest binary can also be found on the releases page or clone and compile in
 
 ### Homebrew
 
-If [homebrew](https://brew.sh) is installed, you can also use `brew install --cask yt-music`
+If [homebrew](https://brew.sh) is installed, you can also use `brew install yt-music`
 
 ## Screenshots
 
