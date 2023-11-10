@@ -74,7 +74,6 @@ class ViewController: NSViewController {
         addStandardButtonsView()
         addMovableView()
         addNavigationButtons()
-        setupLogoRemoveTimer()
         
         view = webView
     }
@@ -147,36 +146,6 @@ class ViewController: NSViewController {
     @objc func preferencesChanged(notification: NSNotification) {
         refreshHotkeys()
     }
-    
-    func setupLogoRemoveTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            self.webView.evaluateJavaScript("""
-            (() => {
-                try {
-                    const elementToRemove = document.getElementById('left-content');
-                    const parentElement = elementToRemove.parentNode;
-
-                    if (elementToRemove) {
-                        parentElement.removeChild(elementToRemove);
-                    
-                        const transparentElement = document.createElement('div');
-
-                        transparentElement.style.width = '300px';
-                        transparentElement.style.height = '20px';
-                        transparentElement.style.opacity = '0';
-                        transparentElement.style.background = 'transparent';
-
-                        parentElement.insertBefore(transparentElement, parentElement.firstChild);
-                        return true
-                    }
-                } catch {
-                    return false
-                }
-            })()
-            """)
-        }
-    }
-
     
     func addNavigationButtons() {
         
