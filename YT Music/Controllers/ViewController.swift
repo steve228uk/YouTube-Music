@@ -149,7 +149,7 @@ class ViewController: NSViewController {
     }
     
     func setupLogoRemoveTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.webView.evaluateJavaScript("""
             (() => {
                 try {
@@ -173,10 +173,7 @@ class ViewController: NSViewController {
                     return false
                 }
             })()
-            """) { (flag, error) in
-                guard let flag = flag as? Bool else { return }
-                if flag { timer.invalidate() }
-            }
+            """)
         }
     }
 
