@@ -43,5 +43,5 @@ class WindowMovableView: NSView {
             break
         }
     }
-    
 }
+

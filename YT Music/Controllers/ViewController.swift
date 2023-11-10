@@ -74,10 +74,11 @@ class ViewController: NSViewController {
         addStandardButtonsView()
         addMovableView()
         addNavigationButtons()
+        setupLogoRemoveTimer()
         
         view = webView
     }
-    
+        
     override func viewDidLayout() {
         
         super.viewDidLayout()
@@ -97,7 +98,7 @@ class ViewController: NSViewController {
             standardButtonsView.addSubview(btn)
         }
         
-        movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 20, width: webView.frame.width, height: 20)
+        movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 20, width: webView.frame.width, height: 60)
         
         let y = webView.isFlipped ? 14 : webView.frame.height - 46
         
@@ -147,6 +148,39 @@ class ViewController: NSViewController {
         refreshHotkeys()
     }
     
+    func setupLogoRemoveTimer() {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            self.webView.evaluateJavaScript("""
+            (() => {
+                try {
+                    const elementToRemove = document.getElementById('left-content');
+                    const parentElement = elementToRemove.parentNode;
+
+                    if (elementToRemove) {
+                        parentElement.removeChild(elementToRemove);
+                    
+                        const transparentElement = document.createElement('div');
+
+                        transparentElement.style.width = '300px';
+                        transparentElement.style.height = '20px';
+                        transparentElement.style.opacity = '0';
+                        transparentElement.style.background = 'transparent';
+
+                        parentElement.insertBefore(transparentElement, parentElement.firstChild);
+                        return true
+                    }
+                } catch {
+                    return false
+                }
+            })()
+            """) { (flag, error) in
+                guard let flag = flag as? Bool else { return }
+                if flag { timer.invalidate() }
+            }
+        }
+    }
+
+    
     func addNavigationButtons() {
         
         backButton = NSButton()
@@ -186,7 +220,7 @@ class ViewController: NSViewController {
 
     func addStandardButtonsView() {
         standardButtonsView = NSView(frame: .zero)
-        standardButtonsView.frame = CGRect(x: 14, y: 0, width: 80, height: 40)
+        standardButtonsView.frame = CGRect(x: 14, y: 4, width: 80, height: 40)
         webView.addSubview(standardButtonsView)
     }
     
