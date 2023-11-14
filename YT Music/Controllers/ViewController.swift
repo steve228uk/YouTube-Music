@@ -77,7 +77,7 @@ class ViewController: NSViewController {
         
         view = webView
     }
-    
+        
     override func viewDidLayout() {
         
         super.viewDidLayout()
@@ -97,7 +97,7 @@ class ViewController: NSViewController {
             standardButtonsView.addSubview(btn)
         }
         
-        movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 20, width: webView.frame.width, height: 20)
+        movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 20, width: webView.frame.width, height: 65)
         
         let y = webView.isFlipped ? 14 : webView.frame.height - 46
         
@@ -186,14 +186,14 @@ class ViewController: NSViewController {
 
     func addStandardButtonsView() {
         standardButtonsView = NSView(frame: .zero)
-        standardButtonsView.frame = CGRect(x: 14, y: 0, width: 80, height: 40)
+        standardButtonsView.frame = CGRect(x: 14, y: 4, width: 80, height: 40)
         webView.addSubview(standardButtonsView)
     }
     
     func addMovableView() {
         movableView = WindowMovableView(frame: .zero)
         movableView.parent = webView
-        movableView.frame = CGRect(x: 0, y: 0, width: webView.frame.width, height: 20)
+        movableView.frame = CGRect(x: 0, y: 0, width: webView.frame.width, height: 65)
         webView.addSubview(movableView)
     }
     

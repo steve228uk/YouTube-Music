@@ -12,23 +12,17 @@ class WindowMovableView: NSView {
     
     weak var parent: NSView?
     
-    override var mouseDownCanMoveWindow: Bool {
-        return true
-    }
-    
-    override var isOpaque: Bool {
-        return false
-    }
-    
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
-        return true
+        return isMovable()
     }
     
     override func mouseDragged(with event: NSEvent) {
+        guard isMovable() else { return super.mouseDragged(with: event) }
         window?.performDrag(with: event)
     }
     
     override func mouseUp(with event: NSEvent) {
+        guard isMovable() else { return super.mouseUp(with: event) }
         
         guard let window = window else {
             return
@@ -44,4 +38,8 @@ class WindowMovableView: NSView {
         }
     }
     
+    private func isMovable() -> Bool {
+        NSCursor.current == NSCursor.arrow
+    }
 }
+

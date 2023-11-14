@@ -17,3 +17,16 @@ ytmusic-nav-bar {
 .logo.ytmusic-nav-bar {
     display: none;
 }
+
+html {
+    overscroll-behavior: none;
+}
+
+#left-content > * {
+  display: none;
+}
+
+#left-content {
+  width: 240px;
+  height: 20px;
+}
